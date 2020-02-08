@@ -1,0 +1,196 @@
+{
+  "name": "beauty-partner",
+  "version": "1.0.0",
+  "description": "Small test to work in Boticario Group",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "tslint": "tslint -p . -c tslint.json",
+    "test": "SET NODE_ENV=test&& jest --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-boost": "^0.4.7",
+    "babel-core": "^6.26.3",
+    "babel-plugin-styled-components": "^1.10.7",
+    "enzyme-to-json": "^3.4.4",
+    "graphql": "^14.6.0",
+    "graphql-tag": "^2.10.3",
+    "graphql-tools": "^4.0.6",
+    "jest-transform-graphql": "^2.1.0",
+    "next": "^9.2.1",
+    "next-with-apollo": "^5.0.0",
+    "react": "^16.12.0",
+    "react-adopt": "^0.6.0",
+    "react-apollo": "^3.1.3",
+    "react-dom": "^16.12.0",
+    "waait": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.5",
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.0",
+    "@types/react": "^16.9.19",
+    "@types/react-sizes": "^2.0.0",
+    "@types/styled-components": "^4.4.2",
+    "add": "^2.0.6",
+    "babel-jest": "^25.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "husky": "^4.2.1",
+    "jest": "^25.1.0",
+    "jest-watch-typeahead": "^0.4.2",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "react-sizes": "^2.0.0",
+    "styled-components": "^5.0.1",
+    "styled-reset": "^4.1.0",
+    "tslint": "^6.0.0",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-react-hooks": "^2.2.1",
+    "typescript": "^3.7.5"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 120
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run tslint"
+    }
+  },
+  "lint-staged": {
+    "*.+(ts|tsx)": [
+      "prettier --write",
+      "git add",
+      "jest --findRelatedTests",
+      "tslint"
+    ]
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "tsx",
+      "json"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>[/\\\\](build|docs|node_modules|.next)[/\\\\]"
+    ],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$"
+    ],
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost",
+    "transform": {
+      "\\.(gql|graphql)$": "jest-transform-graphql",
+      "^.+\\.(js|ts|tsx)$": "babel-jest"
+    },
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ],
+    "testRegex": "/__tests__/.*\\.(test|spec)\\.tsx?$",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "//": "This is the babel config, I prefer this over a .babelrc file",
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ],
+          [
+            "module-resolver",
+            {
+              "root": [
+                "./"
+              ],
+              "alias": {
+                "@components": "./components"
+              }
+            }
+          ]
+        ]
+      },
+      "production": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ],
+          [
+            "module-resolver",
+            {
+              "root": [
+                "./"
+              ],
+              "alias": {
+                "@components": "./components"
+              }
+            }
+          ]
+        ]
+      },
+      "test": {
+        "presets": [
+          [
+            "next/babel",
+            {
+              "preset-env": {
+                "modules": "commonjs"
+              }
+            }
+          ]
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ],
+          [
+            "module-resolver",
+            {
+              "root": [
+                "./"
+              ],
+              "alias": {
+                "@components": "./components"
+              }
+            }
+          ]
+        ]
+      }
+    }
+  }
+}
