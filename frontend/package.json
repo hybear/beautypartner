@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "tslint": "tslint -p . -c tslint.json",
-    "test": "SET NODE_ENV=test&& jest --watchAll"
+    "test": "SET NODE_ENV=test&& jest"
   },
   "author": "",
   "license": "ISC",
