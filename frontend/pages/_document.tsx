@@ -1,9 +1,9 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-import React from 'react';
+import { ReactElement } from 'react';
 import { ServerStyleSheet } from '../styles/themed-components';
 
 interface IProps {
-  styleTags: Array<React.ReactElement<{}>>;
+  styleTags: Array<ReactElement<{}>>;
 }
 
 export default class MyDocument extends Document<IProps> {

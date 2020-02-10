@@ -8,13 +8,14 @@ SSR Aplication on top of the Next 9 features
 .._ NextJs
 .._ Typescript
 .._ TSLint
-..\* Prettier
+.._ Prettier
+.._ Three.js WebgL
 
 <!-- ..* Apollo Client -->
 
 .._ Styled Components
 .._ Jest
-..\* Enzyme
+.._ Enzyme
 
 ## Backend
 
@@ -34,10 +35,5 @@ SSR Aplication on top of the Next 9 features
 .._ Snyk
 
 ## Todo
-
-.._ Three.js WebgL
-.._ Paypal Integration
-.._ Pagseguro Integration
-.._ GetNet Integration
 .._ AWS EC2
 .._ AWS S3

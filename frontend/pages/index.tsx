@@ -1,7 +1,7 @@
-import SignUp from '@components/SignUp';
+import BackgroundInteractive from '@components/General/BackgroundInteractive';
 
 function HomePage() {
-  return <SignUp />;
+  return <BackgroundInteractive />;
 }
 
 export default HomePage;

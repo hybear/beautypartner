@@ -1,8 +1,8 @@
 import baseStyled, { css, ThemedStyledInterface } from 'styled-components';
 
 const sizes = {
-  desktop: 1167,
-  tablet: 778,
+  desktop: 1140,
+  tablet: 768,
   phone: 576,
 };
 
@@ -23,9 +23,13 @@ Object.keys(sizes).reduce((acc, label: string) => {
 }, media);
 
 const color = {
-  blue: '#2054ae',
-  pink: '#c43683',
-  black: '#24272a',
+  primary: '#F57B51',
+  secondary: '#938451',
+  white: '#F1F1F1',
+  grey: 'F8F8F8',
+  black: '#12100E',
+  blue: '#1976D2',
+  orange: '#E27945',
 };
 
 const theme = {

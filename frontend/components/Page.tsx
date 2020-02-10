@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import GlobalStyles from '../styles/global-styles';
 import { ThemeProvider } from '../styles/themed-components';
 import theme from '../styles/theme';
+import Meta from './Meta';
+import Header from './General/Header';
 
 class Page extends App<any> {
   public render() {
@@ -11,8 +13,9 @@ class Page extends App<any> {
       <>
         <GlobalStyles />
         <ThemeProvider theme={theme}>
+          <Meta theme={theme} />
+          <Header />
           {this.props.children}
-          {/* <Component {...pageProps} /> */}
         </ThemeProvider>
       </>
     );

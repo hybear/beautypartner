@@ -1,21 +1,30 @@
 import App from 'next/app';
 import React from 'react';
-import GlobalStyles from '../styles/global-styles';
-import { ThemeProvider } from '../styles/themed-components';
-import theme from '../styles/theme';
+import { ApolloProvider } from 'react-apollo';
+import withData from '../lib/withData';
+import Page from '@components/Page';
 
-class ReactApp extends App<any> {
-  public render() {
-    const { Component, pageProps } = this.props;
+class Index extends App<any> {
+  static async getInitialProps({ Component, ctx }) {
+    let pageProps: any = {};
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+    // this exposes the query to the user
+    pageProps.query = ctx.query;
+    return { pageProps };
+  }
+
+  render() {
+    const { Component, apollo, pageProps } = this.props;
     return (
-      <>
-        <GlobalStyles />
-        <ThemeProvider theme={theme}>
+      <ApolloProvider client={apollo}>
+        <Page>
           <Component {...pageProps} />
-        </ThemeProvider>
-      </>
+        </Page>
+      </ApolloProvider>
     );
   }
 }
 
-export default ReactApp;
+export default withData(Index);
