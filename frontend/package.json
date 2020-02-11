@@ -7,8 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "tslint": "tslint -p . -c tslint.json",
-    "test": "SET NODE_ENV=test&& jest --watchAll"
+    "test": "SET NODE_ENV=test&& jest --watch"
   },
   "author": "",
   "license": "ISC",
@@ -23,10 +22,15 @@
     "jest-transform-graphql": "^2.1.0",
     "next": "^9.2.1",
     "next-with-apollo": "^5.0.0",
+    "nprogress": "^0.2.0",
     "react": "^16.12.0",
     "react-adopt": "^0.6.0",
     "react-apollo": "^3.1.3",
     "react-dom": "^16.12.0",
+    "react-input-mask": "^2.0.4",
+    "react-lottie": "^1.2.3",
+    "react-three-fiber": "^4.0.14",
+    "three": "^0.113.2",
     "waait": "^1.0.5"
   },
   "devDependencies": {
@@ -38,6 +42,7 @@
     "@types/styled-components": "^4.4.2",
     "add": "^2.0.6",
     "babel-jest": "^25.1.0",
+    "babel-plugin-inline-react-svg": "^1.1.1",
     "babel-plugin-module-resolver": "^4.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
@@ -58,11 +63,6 @@
     "singleQuote": true,
     "trailingComma": "es5",
     "printWidth": 120
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run tslint"
-    }
   },
   "lint-staged": {
     "*.+(ts|tsx)": [
@@ -101,7 +101,7 @@
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
     ],
-    "testRegex": "/__tests__/.*\\.(test|spec)\\.tsx?$",
+    "testRegex": "/__tests__/.*\\.(test|spec)\\.js?$",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
@@ -118,7 +118,8 @@
             "styled-components",
             {
               "ssr": true,
-              "displayName": true
+              "displayName": true,
+              "preprocess": false
             }
           ],
           [
@@ -131,7 +132,8 @@
                 "@components": "./components"
               }
             }
-          ]
+          ],
+          "inline-react-svg"
         ]
       },
       "production": {
@@ -143,7 +145,8 @@
             "styled-components",
             {
               "ssr": true,
-              "displayName": true
+              "displayName": true,
+              "preprocess": false
             }
           ],
           [
@@ -156,7 +159,8 @@
                 "@components": "./components"
               }
             }
-          ]
+          ],
+          "inline-react-svg"
         ]
       },
       "test": {
@@ -175,7 +179,8 @@
             "styled-components",
             {
               "ssr": true,
-              "displayName": true
+              "displayName": true,
+              "preprocess": false
             }
           ],
           [
@@ -188,9 +193,21 @@
                 "@components": "./components"
               }
             }
-          ]
+          ],
+          "inline-react-svg"
         ]
       }
-    }
+    },
+    "plugins": [
+      [
+        "styled-components",
+        {
+          "ssr": true,
+          "displayName": true,
+          "preprocess": false
+        }
+      ],
+      "inline-react-svg"
+    ]
   }
 }
