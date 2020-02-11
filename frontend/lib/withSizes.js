@@ -1,9 +1,8 @@
 import reactSizes from 'react-sizes';
-import { DeviceSize } from '../styles/themed-components';
 
-const withSizes = (component: { width: number }): { device: DeviceSize } => {
+const withSizes = component => {
   const { width } = component;
-  let device: DeviceSize = 'desktop';
+  let device = 'desktop';
   if (!width) {
     device = 'ssr';
   } else if (width <= 576) {
@@ -16,4 +15,4 @@ const withSizes = (component: { width: number }): { device: DeviceSize } => {
   };
 };
 
-export default reactSizes(withSizes) as any;
+export default reactSizes(withSizes);

@@ -1,14 +1,6 @@
 import Head from 'next/head';
 
-interface IProps {
-  theme: {
-    color: {
-      black: string;
-    };
-  };
-}
-
-const Meta = (props: IProps) => (
+const Meta = props => (
   <Head>
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

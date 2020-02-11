@@ -13,7 +13,7 @@ const media = {
   phone: (...args) => undefined,
 };
 
-Object.keys(sizes).reduce((acc, label: string) => {
+Object.keys(sizes).reduce((acc, label) => {
   acc[label] = (...args) => css`
     @media (max-width: ${sizes[label]}px) {
       ${css(args.shift(), ...args)}
@@ -25,18 +25,20 @@ Object.keys(sizes).reduce((acc, label: string) => {
 const color = {
   primary: '#F57B51',
   secondary: '#938451',
-  white: '#F1F1F1',
-  grey: 'F8F8F8',
+  white: '#F8F8F8',
+  rawWhite: '#FFF',
+  grey: '#76777A',
   black: '#12100E',
   blue: '#1976D2',
   orange: '#E27945',
+  error: '#D63447',
+  success: '#46A47C',
 };
 
-const theme = {
+export const theme = {
   color,
   media,
 };
 
-export type Theme = typeof theme;
-export const styled = baseStyled as ThemedStyledInterface<Theme>;
+export const styled = baseStyled;
 export default theme;
