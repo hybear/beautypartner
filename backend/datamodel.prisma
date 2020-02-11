@@ -16,12 +16,12 @@ enum OrderStatus {
 type User {
   id: ID! @id
   name: String!
-  document: String! @unique
-  email: String!
+  document: String!
+  email: String! @unique
   password: String!
   birthday: DateTime
   phone: String
-  balance: Int
+  balance: Int @default(value:0)
   resetToken: String
   resetTokenExpiry: String
   permissions: [Permission] @scalarList(strategy: RELATION)

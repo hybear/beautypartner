@@ -1,5 +1,5 @@
 # source: https://eu1.prisma.sh/beauty-parner/main/dev
-# timestamp: Mon Feb 10 2020 23:48:25 GMT-0300 (GMT-03:00)
+# timestamp: Tue Feb 11 2020 15:39:00 GMT-0300 (GMT-03:00)
 
 type AggregateCart {
   count: Int!
@@ -2901,5 +2901,5 @@ input UserWhereInput {
 
 input UserWhereUniqueInput {
   id: ID
-  document: String
+  email: String
 }
