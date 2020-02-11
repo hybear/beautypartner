@@ -1,22 +1,30 @@
-import styled, { withProps } from '../../styles/themed-components';
+import styled from 'styled-components';
+import { Text as GText } from '../General';
+import { Info } from '../General/Form';
+import { Logo as BrandLogo } from '../../public/assets/icon/Logo.svg';
 
-export const StyledP = styled.p`
-  ${props => props.theme.media.tablet`
-    color: black;
-    font-size: 5rem;
-  `}
-  color: ${props => props.theme.color.blue};
-  font-size: 10rem;
-    div {
-        p {
-        }
-    }
+export const FormContainer = styled.div`
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 `;
 
-interface ISample {
-  visible: string;
-}
+export const Text = styled(GText)`
+  display: block;
+  text-align: center;
+`;
 
-export const SampleWithProps = withProps<ISample, HTMLSpanElement>(styled.span)`
-    visibility: ${props => (props.visible ? 'visible' : 'hidden')};
-  `;
+export const Logo = styled(BrandLogo)`
+  width: 15em;
+  height: 15em;
+  margin-bottom: 40px;
+`;
+
+export const Error = styled(Info)`
+  font-size: 1em;
+  text-align: center;
+  font-family: 'QuadraSans-Bold', sans-serif;
+  margin: 0 0 10px;
+`;

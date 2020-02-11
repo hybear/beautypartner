@@ -7,6 +7,7 @@ const CURRENT_USER_QUERY = gql`
     me {
       id
       email
+      document
       name
       birthday
       cart {
