@@ -8,7 +8,7 @@ import InputMask from 'react-input-mask';
 
 // UI
 import { Form, Button, Input, Label, Info, Checkbox } from '../General/Form';
-import { FormContainer, Text, Logo, Error } from './styles';
+import { SignInContainer, BGImage, FormContainer, Text, Logo, Error } from './styles';
 
 // ANIMATIONS
 import Checked from '../General/Animations/Checked';
@@ -35,7 +35,8 @@ const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <>
+    <SignInContainer>
+      <BGImage src="/assets/signinbg-min.jpg" />
       <Mutation
         mutation={SIGNIN_MUTATION}
         variables={User}
@@ -75,11 +76,11 @@ const SignIn = () => {
                   {/^(?!$)+(?!\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)/.test(User.email) && (
                     <Info>Check if your e-mail is valid</Info>
                   )}
-                  {/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(User.email) && (
+                  {/* {/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(User.email) && (
                     <span className="set--ok">
                       <Checked isStoped={false} />
                     </span>
-                  )}
+                  )} */}
                 </div>
 
                 <div className="form__grid">
@@ -105,11 +106,11 @@ const SignIn = () => {
                       <li className={/(?=.{8,})/.test(User.password) && `set-success`}>Min 8 characters</li>
                     </ul>
                   </Info>
-                  {/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(User.password) && (
+                  {/* {/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(User.password) && (
                     <span className="set--ok">
                       <Checked isStoped={false} />
                     </span>
-                  )}
+                  )} */}
                 </div>
 
                 <div className="form__grid">
@@ -150,7 +151,7 @@ const SignIn = () => {
           </FormContainer>
         )}
       </Mutation>
-    </>
+    </SignInContainer>
   );
 };
 

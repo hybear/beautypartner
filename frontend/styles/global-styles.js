@@ -21,14 +21,14 @@ const GlobalStyle = createGlobalStyle`
       font-weight: normal;
       font-style: normal;
   }
+  html{
+      font-size: 1vw;
+  }
   body{
     padding: 0;
     margin: 0;
     font-family: "QuadraSans-Regular", sans-serif;
     text-rendering: optimizeLegibility;
-  }
-  html,body{
-      font-size: 1vw;
   }
   a {
     color: ${theme.color.primary};

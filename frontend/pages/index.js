@@ -1,10 +1,10 @@
-import BackgroundInteractive from '@components/General/BackgroundInteractive';
+import Account from '@components/Account';
 import Middleware from '@components/Middleware';
 
 function HomePage() {
   return (
     <Middleware>
-      <BackgroundInteractive />
+      <Account />
     </Middleware>
   );
 }

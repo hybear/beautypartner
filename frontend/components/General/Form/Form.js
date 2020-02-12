@@ -5,10 +5,12 @@ const Form = styled.form`
   max-width: 575px;
   .form__container {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: auto;
     grid-gap: 15px;
     justify-content: center;
+    max-width: 575px;
+    margin: 0 auto;
   }
   .form__grid {
     display: block;
