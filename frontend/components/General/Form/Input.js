@@ -25,6 +25,11 @@ const Input = styled.input`
     `background: rgba(30, 144, 95, 0.25);
     box-shadow: inset 0px 1px 3px 0px rgba(70, 164, 124, 0.35);
     `}
+
+  &:disabled {
+    cursor: not-allowed;
+    background: ${({ theme }) => theme.color.lightGrey};
+  }
 `;
 
 export default Input;

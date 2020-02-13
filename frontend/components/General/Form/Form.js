@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 const Form = styled.form`
-  width: 90%;
+  /* width: 90%; */
   max-width: 575px;
   .form__container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-auto-rows: auto;
     grid-gap: 15px;
     justify-content: center;

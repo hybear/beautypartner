@@ -1,10 +1,13 @@
 import Account from '@components/Account';
 import Middleware from '@components/Middleware';
+import Profile from '@components/Account/Content/Profile';
 
 function HomePage() {
   return (
     <Middleware>
-      <Account />
+      <Account>
+        <Profile />
+      </Account>
     </Middleware>
   );
 }

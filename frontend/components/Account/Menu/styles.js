@@ -12,7 +12,7 @@ export const Drawer = styled.div`
     'signout' 5%
     / 100%;
   grid-row-gap: 1em;
-  padding-top: 40px;
+  padding-top: 20px;
   background: #fafafa;
   border-right: solid 1px ${({ theme }) => theme.color.lightGrey};
 `;
@@ -47,7 +47,23 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  background: ${({ theme, active }) => (active ? theme.color.primary : 'transparent')};
+  background: ${({ theme, active }) => (active ? theme.color.primary : theme.color.lightGrey)};
+  font-size: 1.25em;
+  padding: 10px 20px;
+  cursor: pointer;
+  a {
+    color: ${({ theme, active }) => (active ? theme.color.white : theme.color.grey)};
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &:hover {
+    a {
+      transition: all 0.2s;
+      transform: translateX(5px);
+      display: block;
+    }
+  }
 `;
 
 export const Avatar = styled(IAvatar)`

@@ -7,8 +7,8 @@ import Router from 'next/router';
 import InputMask from 'react-input-mask';
 
 // UI
-import { Form, Button, Input, Label, Info, Checkbox } from '../General/Form';
-import { SignInContainer, BGImage, FormContainer, Text, Logo, Error } from './styles';
+import { Input, Label, Info, Checkbox } from '../General/Form';
+import { SignInContainer, BGImage, FormContainer, Form, Text, Logo, Error, Button } from './styles';
 
 // ANIMATIONS
 import Checked from '../General/Animations/Checked';
@@ -126,6 +126,7 @@ const SignIn = () => {
               <Button
                 type="submit"
                 primary
+                fullWidth
                 disabled={
                   loading ||
                   /^(?!$)+(?!\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)/.test(User.email) ||

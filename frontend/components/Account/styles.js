@@ -5,5 +5,5 @@ export const Grid = styled.div`
   display: grid;
   grid-template:
     'nav cont figures' 100vh
-    / 15% 65% 20%;
+    / 15% 60% auto;
 `;

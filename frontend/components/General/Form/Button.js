@@ -6,9 +6,9 @@ const Button = styled.button`
   background: ${props => (props.primary ? props.theme.color.primary : 'transparent')};
   ${props => !props.primary && `border: solid 1px ${props.theme.color.secondary}`};
   text-align: center;
-  width: 50%;
-  display: block;
-  margin: 20px auto 10px;
+  display: ${props => (props.fullWidth ? 'block' : 'inline-block')};
+  width: ${props => (props.fullWidth ? '100%' : 'initial')};
+  /* margin: ${props => !props.fullWidth && '20px auto 10px'}; */
   border-radius: 0.2em;
   transition: all 0.2s;
   font-size: 1em;

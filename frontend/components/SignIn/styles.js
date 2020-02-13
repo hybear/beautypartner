@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Text as GText } from '../General';
-import { Info } from '../General/Form';
+import { Info, Form as GForm, Button as GButton } from '../General/Form';
 import { Logo as BrandLogo } from '../../public/assets/icon/Logo.svg';
 
 export const FormContainer = styled.div`
@@ -9,6 +9,12 @@ export const FormContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+`;
+
+export const Form = styled(GForm)`
+  .form__container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 `;
 
 export const Text = styled(GText)`
@@ -41,4 +47,9 @@ export const BGImage = styled.img`
   height: 100%;
   object-fit: cover;
   object-position: center;
+`;
+
+export const Button = styled(GButton)`
+  margin: 20px auto 10px;
+  max-width: 50%;
 `;

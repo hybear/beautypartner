@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { Me } from '../../Middleware';
 import { Drawer, AvatarContainer, Avatar, Balance, List, ListItem, SignOutContainer } from './styles';
 import Link from 'next/link';
@@ -9,6 +9,7 @@ import SignOut from '../../SignOut';
 
 const Menu = () => {
   const User = useContext(Me);
+
   return (
     <Drawer>
       <AvatarContainer>
@@ -26,9 +27,14 @@ const Menu = () => {
         {User.info.balance != null ? formatMoney(User.info.balance) : '$0,00'}
       </Balance>
       <List>
-        <ListItem>
+        <ListItem active>
           <Link href="/profile">
             <a>Profile</a>
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link href="/orders">
+            <a>Orders</a>
           </Link>
         </ListItem>
       </List>
