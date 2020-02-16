@@ -368,7 +368,7 @@ const Mutations = {
           paymentMethod: args.paymentMethod,
           items: { create: orderItems },
           user: { connect: { id: userId } },
-          status: { set: ["PAYMENT_WAITING"] }
+          status: { set: ["VALIDATING"] }
         }
       })
       .catch();
@@ -392,7 +392,7 @@ const Mutations = {
         where: { id: order.id },
         data: {
           charge: charge.id,
-          status: { set: ["PAYMENT_OK"] }
+          status: { set: ["APROVED"] }
         }
       });
 
