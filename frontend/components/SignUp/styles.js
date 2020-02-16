@@ -11,11 +11,7 @@ export const FormContainer = styled.div`
   height: 100vh;
 `;
 
-export const Form = styled(GForm)`
-  .form__container {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-`;
+export const Form = styled(GForm)``;
 
 export const Text = styled(GText)`
   display: block;

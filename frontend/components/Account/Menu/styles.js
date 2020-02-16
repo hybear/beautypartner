@@ -50,6 +50,7 @@ export const ListItem = styled.li`
   background: ${({ theme, active }) => (active ? theme.color.primary : theme.color.lightGrey)};
   font-size: 1.25em;
   padding: 10px 20px;
+  border-bottom: solid 1px ${({ theme }) => theme.color.white};
   cursor: pointer;
   a {
     color: ${({ theme, active }) => (active ? theme.color.white : theme.color.grey)};

@@ -10,8 +10,8 @@ const Input = styled.input`
   margin-top: 5px;
   width: 100%;
 
-  ${props =>
-    !props.checked &&
+  ${({ checked }) =>
+    !checked &&
     `&:focus {
         background: rgba(244, 123, 81, 0.05);
         box-shadow: inset 0px 1px 3px 0px rgba(244, 123, 81, 0.35);

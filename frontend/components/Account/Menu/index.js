@@ -7,7 +7,7 @@ import formatMoney from '../../../lib/formatMoney';
 // UI
 import SignOut from '../../SignOut';
 
-const Menu = () => {
+const Menu = props => {
   const User = useContext(Me);
 
   return (
@@ -27,14 +27,19 @@ const Menu = () => {
         {User.info.balance != null ? formatMoney(User.info.balance) : '$0,00'}
       </Balance>
       <List>
-        <ListItem active>
+        <ListItem active={props.active == 'profile'}>
           <Link href="/profile">
             <a>Profile</a>
           </Link>
         </ListItem>
-        <ListItem>
+        <ListItem active={props.active == 'orders'}>
           <Link href="/orders">
             <a>Orders</a>
+          </Link>
+        </ListItem>
+        <ListItem active={props.active == 'products'}>
+          <Link href="/products">
+            <a>Products</a>
           </Link>
         </ListItem>
       </List>

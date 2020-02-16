@@ -250,7 +250,7 @@ const ProfileContent = props => {
                   </div>
                 </div>
 
-                <Button primary disabled={loading}>
+                <Button primary profile disabled={loading}>
                   Sav{loading ? 'ing' : 'e'} Changes
                 </Button>
                 <Button onClick={() => handleInput(handleProfile, setHandleProfile)}>Cancel</Button>

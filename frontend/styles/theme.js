@@ -36,9 +36,14 @@ const color = {
   success: '#46A47C',
 };
 
+const misc = {
+  bs: '0 2px 15px 0px rgba(0,0,0, 0.09)',
+};
+
 export const theme = {
   color,
   media,
+  misc,
 };
 
 export const styled = baseStyled;

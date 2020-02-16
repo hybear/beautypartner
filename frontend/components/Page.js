@@ -11,10 +11,7 @@ class Page extends App {
     return (
       <>
         <GlobalStyles />
-        <ThemeProvider theme={theme}>
-          <Meta theme={theme} />
-          {this.props.children}
-        </ThemeProvider>
+        <ThemeProvider theme={theme}>{this.props.children}</ThemeProvider>
       </>
     );
   }

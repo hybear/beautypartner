@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const FigureContainer = styled.div`
   grid-area: figures;
@@ -9,12 +9,28 @@ export const FigureContainer = styled.div`
   width: 100%;
 `;
 
+const bright = keyframes`
+  0% {
+    filter: contrast(80%);
+  }
+
+  50% {
+    filter: contrast(120%);
+  }
+
+  100% {
+    filter: contrast(80%);
+  }
+`;
+
 export const Image = styled.img`
   mask-image: url('/assets/icon/MaskAccount.svg');
-  mask-position: center;
+  mask-position: right;
   mask-repeat: no-repeat;
+  mask-size: cover;
   object-fit: cover;
-  object-position: center;
+  object-position: right;
   height: 100%;
   width: 100%;
+  animation: ${bright} 3s linear infinite;
 `;

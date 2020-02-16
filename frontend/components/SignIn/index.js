@@ -36,7 +36,7 @@ const SignIn = () => {
 
   return (
     <SignInContainer>
-      <BGImage src="/assets/signinbg-min.jpg" />
+      <BGImage src="/assets/signinbg-min.jpg" alt="Beauty Partner Makes" />
       <Mutation
         mutation={SIGNIN_MUTATION}
         variables={User}
@@ -66,6 +66,7 @@ const SignIn = () => {
                   <Input
                     name="email"
                     type="email"
+                    id="email"
                     required
                     placeholder="Ex: lydia.hallie@email.com"
                     checked={/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(User.email) && true}
@@ -87,6 +88,7 @@ const SignIn = () => {
                   <Label htmlFor="password">Password*</Label>
                   <Input
                     name="password"
+                    id="password"
                     required
                     placeholder="*******"
                     value={User.password}
