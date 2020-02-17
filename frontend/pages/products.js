@@ -3,7 +3,7 @@ import Middleware from '@components/Middleware';
 import Products from '@components/Account/Content/Products';
 import Meta from '@components/Meta';
 
-function HomePage() {
+function ProductsPage() {
   return (
     <Middleware>
       <Meta title="Products" desc="Shop now products from O Boticario" />
@@ -14,4 +14,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default ProductsPage;

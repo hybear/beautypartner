@@ -4,3 +4,4 @@ export { default as ProductList } from './ProductList';
 export { default as EditButton } from './EditButton';
 export { default as Cart } from './Cart';
 export { default as CartPop } from './CartPop';
+export { default as Search } from './Search';

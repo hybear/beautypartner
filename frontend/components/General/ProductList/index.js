@@ -7,6 +7,9 @@ import { Me } from '../../Middleware';
 import { perPage } from '../../../config';
 import { ItemsList } from './styles';
 
+// ANIMATIONS
+import Loading from '../Animations/ContentLoading';
+
 const ALL_PRODUCTS_QUERY = gql`
     query ALL_PRODUCTS_QUERY($skip: Int = 0, $first: Int = ${perPage}) {
         items(first: $first, skip: $skip, orderBy: createdAt_DESC){
@@ -36,7 +39,7 @@ const Products = props => {
         }}
       >
         {({ data, error, loading }) => {
-          if (loading) return <p>Loading...</p>;
+          if (loading) return <Loading isStoped={false} />;
           if (error) return <p>Error: {error.message}</p>;
           return (
             <ItemsList>

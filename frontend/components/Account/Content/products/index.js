@@ -1,7 +1,14 @@
-import { ProductList } from '../../../General';
+import { ProductList, Search } from '../../../General';
+import { Title } from '../styles'; // Content
 
 const Products = () => {
-  return <ProductList />;
+  return (
+    <>
+      <Title>Find Your Products</Title>
+      <Search />
+      <ProductList />
+    </>
+  );
 };
 
 export default Products;

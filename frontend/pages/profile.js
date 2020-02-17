@@ -3,7 +3,7 @@ import Middleware from '@components/Middleware';
 import Profile from '@components/Account/Content/Profile';
 import Meta from '@components/Meta';
 
-function HomePage() {
+function ProfilePage() {
   return (
     <Middleware>
       <Meta title="Dashboard" desc="Check your orders, vip status and make new orders" />
@@ -14,4 +14,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default ProfilePage;
