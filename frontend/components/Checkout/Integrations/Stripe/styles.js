@@ -8,10 +8,10 @@ export const StripeButtonStyles = styled(Button)`
   display: flex;
   justify-content: center;
   box-shadow: inset 0px 2px 10px 0px rgba(0, 0, 0, 0.35);
+  border: none;
   span {
     display: flex;
     svg {
-      padding: 10px;
       width: 5.25em;
       path {
         fill: ${({ theme }) => theme.color.white};

@@ -19,7 +19,7 @@ export const Profile = styled.div`
   box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
   display: grid;
   grid-area: profile;
-  ${props => !props.handleProfile && `grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))`};
+  ${props => !props.handleProfile && `grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3), 1fr))`};
   grid-gap: 5px;
   /* margin: 10px 0; */
   padding: 20px;
@@ -71,5 +71,5 @@ export const PasswordContainer = styled.div`
 `;
 
 export const Button = styled(GButton)`
-  ${({ profile }) => profile && `margin: 20px 10px 0 15px;`}
+  ${({ profile }) => profile && `margin: 20px 10px 0 0;`}
 `;

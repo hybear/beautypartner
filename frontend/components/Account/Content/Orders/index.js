@@ -2,10 +2,22 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import formatMoney from '../../../../lib/formatMoney';
 import { format, formatDistance, parseISO } from 'date-fns';
+import Link from 'next/link';
 
 // UI
 import { Title } from '../styles'; // Content
-import { OrderStylesContainer, OrderList, OrderTitle, OrderTotal } from './styles';
+import {
+  OrderStylesContainer,
+  OrderListTitle,
+  OrderList,
+  OrderStyles,
+  OrderTitle,
+  OrderTotal,
+  OrderButton,
+} from './styles';
+
+// ANIMATIONS
+import Loading from '../../../General/Animations/ContentLoading';
 
 const ALL_ORDERS_QUERY = gql`
   query ALL_ORDERS_QUERY {
@@ -16,6 +28,7 @@ const ALL_ORDERS_QUERY = gql`
       createdAt
       status
       paymentMethod
+      cashback
       user {
         id
       }
@@ -33,19 +46,37 @@ const ALL_ORDERS_QUERY = gql`
 `;
 
 const Order = order => (
-  <li>
-    <span>{order.id}</span>
-    <span>{order.status}</span>
-    <span>{formatDistance(parseISO(order.createdAt), new Date())} ago</span>
-    <span>{formatMoney(order.total)}</span>
-  </li>
+  <OrderStyles>
+    <Link href={`/orders/${order.id}`}>
+      <a className="order">
+        <span className="order__title">Order ID</span>
+        <span className="order__title">Status</span>
+        <span className="order__title">Date</span>
+        <span className="order__title">Total</span>
+        <span className="order__title">Cashback</span>
+        <span className="order__info id">{order.id}</span>
+        <span className="order__info status">{order.status}</span>
+        <span className="order__info date">{formatDistance(parseISO(order.createdAt), new Date())} ago</span>
+        <span className="order__info total">{formatMoney(order.total)}</span>
+        <span className="order__info cashback">
+          +
+          {formatMoney(
+            (order.items.reduce((tally, cartItem) => tally + cartItem.bestPrice * cartItem.quantity, 0) *
+              order.cashback) /
+              100
+          )}
+          <small>{order.cashback}%</small>
+        </span>
+      </a>
+    </Link>
+  </OrderStyles>
 );
 
 const Orders = () => {
   return (
     <Query query={ALL_ORDERS_QUERY}>
       {({ data, error, loading }) => {
-        if (loading) return 'Loading...';
+        if (loading) return <Loading isStoped={false} />;
         if (error) return <Error error={error} />;
 
         const orders = data.orders;
@@ -53,11 +84,17 @@ const Orders = () => {
           <OrderStylesContainer>
             <Title>Orders</Title>
             <OrderTotal>You have a total of {orders.length} orders</OrderTotal>
+            <OrderListTitle></OrderListTitle>
             <OrderList>
               {orders.map(order => (
                 <Order {...order} />
               ))}
             </OrderList>
+            <OrderButton primary>
+              <Link href="/products">
+                <a>New Order</a>
+              </Link>
+            </OrderButton>
           </OrderStylesContainer>
         );
       }}
