@@ -326,6 +326,7 @@ const Mutations = {
                 name
                 email 
                 balance
+                badges
                 cart { 
                     id 
                     quantity 
@@ -342,10 +343,22 @@ const Mutations = {
             }`
     );
 
-    const amount = user.cart.reduce(
+    const cashbackPercent = user.badges.map(badge => {
+      if (badge == "Diamond") return 20; // 20
+      if (badge == "SeasonLeader") return 15; // 15
+      if (badge == "RisingStar") return 10; // 10
+      if (badge == "BeautyPartner") return 5; // 5
+    }) ;
+
+    // console.log(cashbackPercent);
+    let total = user.cart.reduce(
       (tally, cartItem) => tally + cartItem.item.bestPrice * cartItem.quantity,
       0
     );
+    // console.log(total);
+    const amount = total - ((total * cashbackPercent) / 100);
+
+    // console.log(amount);
 
     console.log(`Going to charge for a total of ${amount}`);
 
@@ -368,7 +381,8 @@ const Mutations = {
           paymentMethod: args.paymentMethod,
           items: { create: orderItems },
           user: { connect: { id: userId } },
-          status: { set: ["VALIDATING"] }
+          status: { set: ["VALIDATING"] },
+          cashback: cashbackPercent
         }
       })
       .catch();
@@ -381,9 +395,11 @@ const Mutations = {
       }
     });
 
+    const stripeAmount = amount * 100
+
     if (args.paymentMethod == "stripe") {
       const charge = await stripe.charges.create({
-        amount,
+        amount: stripeAmount,
         currency: "USD",
         source: args.token
       });
@@ -399,7 +415,7 @@ const Mutations = {
       const updateBalance = await ctx.db.mutation.updateUser({
         where: { id: userId },
         data: {
-          balance: user.balance + amount / 10
+          balance: user.balance + ((total * cashbackPercent) / 100)
         }
       });
 

@@ -81,7 +81,7 @@ type User {
   document: String!
   email: String!
   birthday: DateTime
-  balance: Int
+  balance: Float
   phone: String
   permissions: [Permission!]!
   cart: [CartItem!]!

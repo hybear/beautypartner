@@ -1,5 +1,5 @@
 # source: https://eu1.prisma.sh/beauty-parner/main/dev
-# timestamp: Tue Feb 11 2020 15:39:00 GMT-0300 (GMT-03:00)
+# timestamp: Sun Feb 16 2020 22:31:13 GMT-0300 (GMT-03:00)
 
 type AggregateCart {
   count: Int!
@@ -23,6 +23,21 @@ type AggregateOrderItem {
 
 type AggregateUser {
   count: Int!
+}
+
+enum Badges {
+  BeautyPartner
+  FirstOrder
+  Explorer
+  PlayerOne
+  PopStar
+  Prospecter
+  GlobalSeller
+  Diamond
+  SeasonLeader
+  Influencer
+  RisingStar
+  Focus
 }
 
 type BatchPayload {
@@ -1103,7 +1118,7 @@ interface Node {
 type Order implements Node {
   id: ID!
   items(where: OrderItemWhereInput, orderBy: OrderItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [OrderItem!]
-  total: Int!
+  total: Float!
   user: User!
   charge: String
   paymentMethod: String!
@@ -1125,7 +1140,7 @@ type OrderConnection {
 
 input OrderCreateInput {
   id: ID
-  total: Int!
+  total: Float!
   charge: String
   paymentMethod: String!
   cashback: Int
@@ -1912,7 +1927,7 @@ enum OrderOrderByInput {
 
 type OrderPreviousValues {
   id: ID!
-  total: Int!
+  total: Float!
   charge: String
   paymentMethod: String!
   cashback: Int!
@@ -1967,7 +1982,7 @@ input OrderSubscriptionWhereInput {
 }
 
 input OrderUpdateInput {
-  total: Int
+  total: Float
   charge: String
   paymentMethod: String
   cashback: Int
@@ -1977,7 +1992,7 @@ input OrderUpdateInput {
 }
 
 input OrderUpdateManyMutationInput {
-  total: Int
+  total: Float
   charge: String
   paymentMethod: String
   cashback: Int
@@ -2037,28 +2052,28 @@ input OrderWhereInput {
 
   """All values not ending with the given string."""
   id_not_ends_with: ID
-  total: Int
+  total: Float
 
   """All values that are not equal to given value."""
-  total_not: Int
+  total_not: Float
 
   """All values that are contained in given list."""
-  total_in: [Int!]
+  total_in: [Float!]
 
   """All values that are not contained in given list."""
-  total_not_in: [Int!]
+  total_not_in: [Float!]
 
   """All values less than the given value."""
-  total_lt: Int
+  total_lt: Float
 
   """All values less than or equal the given value."""
-  total_lte: Int
+  total_lte: Float
 
   """All values greater than the given value."""
-  total_gt: Int
+  total_gt: Float
 
   """All values greater than or equal the given value."""
-  total_gte: Int
+  total_gte: Float
   charge: String
 
   """All values that are not equal to given value."""
@@ -2283,10 +2298,11 @@ type User implements Node {
   password: String!
   birthday: DateTime
   phone: String
-  balance: Int
+  balance: Float
   resetToken: String
   resetTokenExpiry: String
   permissions: [Permission!]!
+  badges: [Badges!]!
   cart(where: CartItemWhereInput, orderBy: CartItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CartItem!]
 }
 
@@ -2300,6 +2316,10 @@ type UserConnection {
   aggregate: AggregateUser!
 }
 
+input UserCreatebadgesInput {
+  set: [Badges!]
+}
+
 input UserCreateInput {
   id: ID
   name: String!
@@ -2308,10 +2328,11 @@ input UserCreateInput {
   password: String!
   birthday: DateTime
   phone: String
-  balance: Int
+  balance: Float
   resetToken: String
   resetTokenExpiry: String
   permissions: UserCreatepermissionsInput
+  badges: UserCreatebadgesInput
   cart: CartItemCreateManyWithoutUserInput
 }
 
@@ -2337,10 +2358,11 @@ input UserCreateWithoutCartInput {
   password: String!
   birthday: DateTime
   phone: String
-  balance: Int
+  balance: Float
   resetToken: String
   resetTokenExpiry: String
   permissions: UserCreatepermissionsInput
+  badges: UserCreatebadgesInput
 }
 
 """An edge in a connection."""
@@ -2383,10 +2405,11 @@ type UserPreviousValues {
   password: String!
   birthday: DateTime
   phone: String
-  balance: Int
+  balance: Float
   resetToken: String
   resetTokenExpiry: String
   permissions: [Permission!]!
+  badges: [Badges!]!
 }
 
 type UserSubscriptionPayload {
@@ -2428,6 +2451,10 @@ input UserSubscriptionWhereInput {
   node: UserWhereInput
 }
 
+input UserUpdatebadgesInput {
+  set: [Badges!]
+}
+
 input UserUpdateDataInput {
   name: String
   document: String
@@ -2435,10 +2462,11 @@ input UserUpdateDataInput {
   password: String
   birthday: DateTime
   phone: String
-  balance: Int
+  balance: Float
   resetToken: String
   resetTokenExpiry: String
   permissions: UserUpdatepermissionsInput
+  badges: UserUpdatebadgesInput
   cart: CartItemUpdateManyWithoutUserInput
 }
 
@@ -2449,10 +2477,11 @@ input UserUpdateInput {
   password: String
   birthday: DateTime
   phone: String
-  balance: Int
+  balance: Float
   resetToken: String
   resetTokenExpiry: String
   permissions: UserUpdatepermissionsInput
+  badges: UserUpdatebadgesInput
   cart: CartItemUpdateManyWithoutUserInput
 }
 
@@ -2463,10 +2492,11 @@ input UserUpdateManyMutationInput {
   password: String
   birthday: DateTime
   phone: String
-  balance: Int
+  balance: Float
   resetToken: String
   resetTokenExpiry: String
   permissions: UserUpdatepermissionsInput
+  badges: UserUpdatebadgesInput
 }
 
 input UserUpdateOneInput {
@@ -2505,10 +2535,11 @@ input UserUpdateWithoutCartDataInput {
   password: String
   birthday: DateTime
   phone: String
-  balance: Int
+  balance: Float
   resetToken: String
   resetTokenExpiry: String
   permissions: UserUpdatepermissionsInput
+  badges: UserUpdatebadgesInput
 }
 
 input UserUpsertNestedInput {
@@ -2792,28 +2823,28 @@ input UserWhereInput {
 
   """All values not ending with the given string."""
   phone_not_ends_with: String
-  balance: Int
+  balance: Float
 
   """All values that are not equal to given value."""
-  balance_not: Int
+  balance_not: Float
 
   """All values that are contained in given list."""
-  balance_in: [Int!]
+  balance_in: [Float!]
 
   """All values that are not contained in given list."""
-  balance_not_in: [Int!]
+  balance_not_in: [Float!]
 
   """All values less than the given value."""
-  balance_lt: Int
+  balance_lt: Float
 
   """All values less than or equal the given value."""
-  balance_lte: Int
+  balance_lte: Float
 
   """All values greater than the given value."""
-  balance_gt: Int
+  balance_gt: Float
 
   """All values greater than or equal the given value."""
-  balance_gte: Int
+  balance_gte: Float
   resetToken: String
 
   """All values that are not equal to given value."""
