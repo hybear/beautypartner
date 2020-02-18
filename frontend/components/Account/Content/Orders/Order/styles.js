@@ -3,7 +3,6 @@ import { Title } from '../../styles';
 import { Button } from '../../../../General/Form';
 
 export const OrderStylesContainer = styled.div`
-  height: 100%;
   overflow: hidden;
 `;
 
@@ -18,37 +17,66 @@ export const OrderListTitle = styled.div`
 `;
 export const OrderStyles = styled.li`
   margin: 10px 0;
+  padding: 20px;
   display: block;
-  .order {
-    display: grid;
-    justify-content: space-between;
-    align-items: center;
-    grid-template-columns: repeat(4, auto);
-    padding: 20px;
-    transition: all 0.2s;
+  background: ${({ theme }) => theme.color.lightGrey};
+  box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 0.2rem;
+`;
+
+export const OrderInfo = styled.div`
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: repeat(4, auto);
+  transition: all 0.2s;
+  text-align: center;
+  color: ${({ theme }) => theme.color.grey};
+  text-decoration: none;
+  padding-top: 20px;
+
+  .title {
+    font-family: 'QuadraSans-Bold', sans-serif;
+    margin-bottom: 10px;
+    font-size: 1.25em;
+  }
+
+  .content {
+    &.cashback {
+      small {
+        display: block;
+        background: ${({ theme }) => theme.color.primary};
+        color: ${({ theme }) => theme.color.white};
+        padding: 0.1em 0;
+        border-radius: 2px;
+      }
+    }
+  }
+`;
+
+export const OrderItems = styled.div`
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: repeat(5, auto);
+  margin-top: 20px;
+  background: ${({ theme }) => theme.color.white};
+  padding: 10px;
+  border-radius: 0.2em;
+  grid-gap: 20px;
+  .title {
+    text-align: center;
+    font-family: 'QuadraSans-Bold', sans-serif;
+    margin-bottom: 10px;
+    color: ${({ theme }) => theme.color.grey};
+  }
+  .item {
+    display: contents;
+    margin-top: 20px;
     text-align: center;
     color: ${({ theme }) => theme.color.grey};
-    text-decoration: none;
-    background: ${({ theme }) => theme.color.lightGrey};
-    box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
-    border-radius: 0.2rem;
-
-    .order__title {
-      font-family: 'QuadraSans-Bold', sans-serif;
-      margin-bottom: 10px;
-      font-size: 1.25em;
-    }
-
-    .order__info {
-      &.cashback {
-        small {
-          display: block;
-          background: ${({ theme }) => theme.color.primary};
-          color: ${({ theme }) => theme.color.white};
-          padding: 0.1em 0;
-          border-radius: 2px;
-        }
-      }
+    &__picture {
+      max-width: 60px;
     }
   }
 `;

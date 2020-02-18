@@ -3,7 +3,7 @@ import Middleware from '@components/Middleware';
 import Profile from '@components/Account/Content/Profile';
 import Meta from '@components/Meta';
 
-function HomePage() {
+const HomePage = () => {
   return (
     <Middleware>
       <Meta title="Dashboard" desc="Check your orders, vip status and make new orders" />
@@ -12,6 +12,6 @@ function HomePage() {
       </Account>
     </Middleware>
   );
-}
+};
 
 export default HomePage;

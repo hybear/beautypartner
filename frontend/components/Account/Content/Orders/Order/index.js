@@ -7,7 +7,10 @@ import Link from 'next/link';
 
 // UI
 import { Title } from '../../styles'; // Content
-import { OrderStylesContainer, OrderStyles, OrderButton } from './styles';
+import { OrderStylesContainer, OrderStyles, OrderInfo, OrderItems, OrderButton } from './styles';
+
+// ANIMATIONS
+import Loading from '../../../../General/Animations/ContentLoading';
 
 const SINGLE_ORDER_QUERY = gql`
   query SINGLE_ORDER_QUERY($id: ID!) {
@@ -40,7 +43,7 @@ const Order = ({ id }) => {
     <Query query={SINGLE_ORDER_QUERY} variables={{ id }}>
       {({ data, error, loading }) => {
         // if (error) return <Error error={error} />;
-        if (loading) return <p>Loading...</p>;
+        if (loading) return <Loading isStoped={false} />;
 
         const { order } = data;
         console.log(order);
@@ -49,15 +52,15 @@ const Order = ({ id }) => {
           <OrderStylesContainer>
             <OrderStyles>
               <Title>Order: {order.id}</Title>
-              <div className="order">
-                <span className="order__title">Status</span>
-                <span className="order__title">Date</span>
-                <span className="order__title">Total</span>
-                <span className="order__title">Cashback</span>
-                <span className="order__info status">{order.status}</span>
-                <span className="order__info date">{formatDistance(parseISO(order.createdAt), new Date())} ago</span>
-                <span className="order__info total">{formatMoney(order.total)}</span>
-                <span className="order__info cashback">
+              <OrderInfo>
+                <span className="title">Status</span>
+                <span className="title">Date</span>
+                <span className="title">Total</span>
+                <span className="title">Cashback</span>
+                <span className="content status">{order.status}</span>
+                <span className="content date">{formatDistance(parseISO(order.createdAt), new Date())} ago</span>
+                <span className="content total">{formatMoney(order.total)}</span>
+                <span className="content cashback">
                   +
                   {formatMoney(
                     (order.items.reduce((tally, cartItem) => tally + cartItem.bestPrice * cartItem.quantity, 0) *
@@ -66,7 +69,23 @@ const Order = ({ id }) => {
                   )}
                   <small>{order.cashback}%</small>
                 </span>
-              </div>
+              </OrderInfo>
+              <OrderItems>
+                <span className="title">Photo</span>
+                <span className="title">Title</span>
+                <span className="title">Quantity</span>
+                <span className="title">Unit Price</span>
+                <span className="title">Total</span>
+                {order.items.map(item => (
+                  <div className="item">
+                    <img className="item__picture" src={item.image} alt={item.title} />
+                    <p>{item.title}</p>
+                    <p>{item.quantity}</p>
+                    <p>{formatMoney(item.bestPrice)}</p>
+                    <p>{formatMoney(item.bestPrice * item.quantity)}</p>
+                  </div>
+                ))}
+              </OrderItems>
             </OrderStyles>
           </OrderStylesContainer>
         );

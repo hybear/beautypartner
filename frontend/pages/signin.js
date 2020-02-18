@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Me } from '@components/Middleware';
 import Meta from '@components/Meta';
 
-function SignInPage() {
+const SignInPage = () => {
   const User = useContext(Me);
   console.log(User);
   return (
@@ -12,6 +12,6 @@ function SignInPage() {
       <SignIn />
     </>
   );
-}
+};
 
 export default SignInPage;

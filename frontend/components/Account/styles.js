@@ -6,4 +6,5 @@ export const Grid = styled.div`
   grid-template:
     'nav cont figures' 100vh
     / 15% 60% auto;
+  overflow: hidden;
 `;

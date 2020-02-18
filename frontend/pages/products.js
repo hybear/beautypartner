@@ -3,15 +3,15 @@ import Middleware from '@components/Middleware';
 import Products from '@components/Account/Content/Products';
 import Meta from '@components/Meta';
 
-function ProductsPage() {
+const ProductsPage = props => {
   return (
     <Middleware>
       <Meta title="Products" desc="Shop now products from O Boticario" />
       <Account active="products">
-        <Products />
+        <Products page={parseFloat(props.query.page) || 1} first={3} />
       </Account>
     </Middleware>
   );
-}
+};
 
 export default ProductsPage;

@@ -72,9 +72,8 @@ export const AddToCart = styled.div`
 `;
 
 export const PriceTag = styled.span`
-  background: ${({ theme }) => theme.color.red};
-  color: white;
-  font-weight: 600;
+  background: ${({ theme }) => theme.color.primary};
+  color: ${({ theme }) => theme.color.white};
   padding: 5px;
   line-height: 1;
   font-size: 1.25em;

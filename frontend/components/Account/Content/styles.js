@@ -6,6 +6,23 @@ export const Content = styled.div`
   padding-top: 40px;
   /* padding: 1em 1em 0; */
   margin-top: 20px;
+  overflow: auto;
+  padding: 0 20px 0;
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: ${({ theme }) => theme.color.white};
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: ${({ theme }) => theme.color.white};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: ${({ theme }) => theme.color.lightGrey};
+  }
 `;
 
 export const Title = styled.h2`

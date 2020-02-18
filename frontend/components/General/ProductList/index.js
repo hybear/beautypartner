@@ -28,6 +28,7 @@ const ALL_PRODUCTS_QUERY = gql`
 
 const Products = props => {
   const { info } = useContext(Me);
+  console.log(props.page);
   return (
     <React.Fragment>
       <Pagination page={props.page} first={props.first} />

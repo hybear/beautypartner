@@ -3,7 +3,7 @@ import Middleware from '@components/Middleware';
 import Order from '@components/Account/Content/Orders/Order';
 import Meta from '@components/Meta';
 
-function OrdersPage(props) {
+const OrdersPage = props => {
   return (
     <Middleware>
       <Meta title="Orders" desc="Check your orders, vip status and make new orders" />
@@ -12,6 +12,6 @@ function OrdersPage(props) {
       </Account>
     </Middleware>
   );
-}
+};
 
 export default OrdersPage;
