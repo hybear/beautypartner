@@ -25,31 +25,11 @@ import JestIcon from '../../public/assets/icon/Jest.svg';
 
 // SVG HYBEAR
 import SigleTreeSVG from '../../public/assets/icon/H-Tree.svg';
-import TreesRSVG from '../../public/assets/icon/H-TreesR.svg';
+import TreesLSVG from '../../public/assets/icon/H-TreesR.svg';
 import RabbitHoleSVG from '../../public/assets/icon/H-RabbitHole.svg';
 import LogoSVG from '../../public/assets/icon/H-Logo.svg';
-import TreesLSVG from '../../public/assets/icon/H-TreesL.svg';
+import TreesRSVG from '../../public/assets/icon/H-TreesL.svg';
 import FoxSVG from '../../public/assets/icon/H-Fox.svg';
-
-export const GitHub = styled(GitHubIcon)`
-  width: 1.5em;
-`;
-export const Medium = styled(MediumIcon)`
-  width: 1.5em;
-`;
-export const LinkedIn = styled(LinkedInIcon)`
-  width: 1.5em;
-`;
-export const Instagram = styled(InstagramIcon)`
-  width: 1.5em;
-`;
-
-export const Claw = styled(ClawEffect)`
-  width: 50%;
-  position: absolute;
-  left: 1em;
-  bottom: -1em;
-`;
 
 export const Content = styled.main`
   display: grid;
@@ -59,6 +39,17 @@ export const Content = styled.main`
     'design development' auto / 50% 50%;
   overflow-x: hidden;
   padding-bottom: 60px;
+
+  ${({ theme }) => theme.media.tablet`
+      grid-template:
+        'artwork' 5%
+        'profile' auto
+        'about' auto
+        'design' auto 
+        'development' auto/ auto;
+      overflow: hidden;
+      padding-bottom: 140px;
+  `}
 `;
 
 export const Profile = styled.div`
@@ -71,8 +62,18 @@ export const Profile = styled.div`
   margin: 40px;
   position: relative;
   z-index: 2;
+
+  ${({ theme }) => theme.media.tablet`
+    grid-template-columns: 100%;
+    justify-content: center;
+    margin: 20px 15px 0;
+  `}
+
   .picture {
     position: relative;
+    ${({ theme }) => theme.media.tablet`
+      display: flex;
+    `}
     img {
       margin: 0 auto;
       max-height: 180px;
@@ -83,6 +84,10 @@ export const Profile = styled.div`
   }
   .content {
     margin-left: 20px;
+    ${({ theme }) => theme.media.tablet`
+        margin: 20px 0 0 0;
+        text-align: center;
+    `}
     &__sub {
       font-size: 1em;
       i {
@@ -101,11 +106,24 @@ export const Profile = styled.div`
       strong {
         color: ${({ theme }) => theme.color.primary};
       }
+      ${({ theme }) => theme.media.tablet`
+          margin: 0 auto;
+      `}
     }
     &__social {
       display: flex;
       align-items: center;
       margin: 10px 0;
+      svg {
+        width: 1.5em;
+      }
+      ${({ theme }) => theme.media.tablet`
+          justify-content: center;
+          margin-top: 20px;
+          svg{
+            width: 1.75em;
+          }
+      `}
       li {
         margin-right: 10px;
       }
@@ -113,23 +131,46 @@ export const Profile = styled.div`
   }
 `;
 
+export const GitHub = styled(GitHubIcon)``;
+export const Medium = styled(MediumIcon)``;
+export const LinkedIn = styled(LinkedInIcon)``;
+export const Instagram = styled(InstagramIcon)``;
+
+export const Claw = styled(ClawEffect)`
+  width: 50%;
+  position: absolute;
+  left: 1em;
+  bottom: -1em;
+  ${({ theme }) => theme.media.tablet`
+    left: 50%;
+    transform: translateX(-50%);
+  `}
+`;
+
 export const Artwork = styled.div`
+  grid-area: artwork;
   background: ${({ theme }) => theme.color.rawWhite};
   position: relative;
+  ${({ theme }) => theme.media.tablet`
+      // display: none;
+  `}
 `;
 
 export const BG = styled.div`
   position: absolute;
-  width: 200%;
+  width: 150%;
   height: 100%;
   background: ${({ theme }) => theme.color.rawWhite};
   top: -5vw;
-  right: -30vw;
+  right: 0;
   z-index: 1;
   mask-image: url('/assets/icon/H-BGMask.svg');
-  mask-position: center;
+  mask-position: left;
   mask-repeat: no-repeat;
   mask-size: cover;
+  ${({ theme }) => theme.media.tablet`
+      // display: none;
+  `}
   &:after {
     content: '';
     background: linear-gradient(180deg, #091124 0, #0f1932);
@@ -180,17 +221,24 @@ export const NatureGroup = styled.div`
 `;
 
 export const TreesL = styled(TreesLSVG)`
-  width: 13%;
+  width: 10%;
   position: absolute;
-  right: 20%;
+  left: 25%;
   bottom: 30%;
+  ${({ theme }) => theme.media.tablet`
+    left: 10%;
+  `}
 `;
 
 export const RabbitHole = styled(RabbitHoleSVG)`
   width: 25%;
   position: absolute;
   right: 40%;
-  bottom: 8%;
+  bottom: 15%;
+  ${({ theme }) => theme.media.tablet`
+    right: 60%;
+    bottom: 10%;
+  `}
 `;
 
 export const Logo = styled(LogoSVG)`
@@ -202,28 +250,32 @@ export const Logo = styled(LogoSVG)`
 `;
 
 export const Fox = styled(FoxSVG)`
-  width: 17%;
+  width: 20%;
   position: absolute;
-  bottom: 0;
-  left: 5%;
+  bottom: 10%;
+  right: 5%;
 `;
 
 export const TreesR = styled(TreesRSVG)`
-  width: 11%;
+  width: 13%;
   position: absolute;
-  left: 15%;
-  bottom: 20%;
+  right: 25%;
+  bottom: 30%;
 `;
 
 export const SingleTree = styled(SigleTreeSVG)`
   width: 5%;
   position: absolute;
   right: 10%;
-  bottom: 20%;
+  bottom: 35%;
 `;
 
 export const AboutProject = styled.div`
+  grid-area: about;
   margin: 0 40px;
+  ${({ theme }) => theme.media.tablet`
+      margin: 20px 15px;
+  `}
 `;
 
 export const Title = styled(GTitle)`
@@ -240,7 +292,11 @@ export const SubTitle = styled(Title)`
 export const Text = styled(GText)``;
 
 export const Design = styled.div`
+  grid-area: design;
   margin: 20px 0 0 40px;
+  ${({ theme }) => theme.media.tablet`
+      margin: 20px 15px;
+  `}
 
   .screensContainer {
     display: flex;
@@ -248,6 +304,14 @@ export const Design = styled.div`
       margin-right: 20px;
       box-shadow: ${({ theme }) => theme.misc.bs};
       object-fit: contain;
+      ${({ theme }) => theme.media.tablet`
+          &:nth-child(1){
+            width: 70%;
+          }
+          &:nth-child(2){
+            width: 20%;
+          }
+      `}
     }
     &__link {
       text-decoration: underline;
@@ -285,11 +349,18 @@ export const Photoshop = styled(AdobePhotoshopIcon)`
 `;
 
 export const Development = styled.div`
+  grid-area: development;
   margin: 20px 40px 0 0;
+  ${({ theme }) => theme.media.tablet`
+      margin: 20px 15px;
+  `}
   .proccessContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+    ${({ theme }) => theme.media.tablet`
+        grid-template-columns: 100%;
+    `}
 
     &__item {
       box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
@@ -303,6 +374,9 @@ export const Development = styled.div`
       background: ${({ theme }) => theme.color.blue};
       text-align: center;
       padding: 10px;
+      ${({ theme }) => theme.media.tablet`
+          font-size: 1.5em;
+      `}
     }
     .highlight {
       display: flex;
@@ -314,6 +388,9 @@ export const Development = styled.div`
       padding: 0 20px 20px;
       &__item {
         margin: 10px 0;
+        ${({ theme }) => theme.media.tablet`
+            font-size: 1.25em;
+        `}
       }
     }
   }

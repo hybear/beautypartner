@@ -53,7 +53,7 @@ const About = () => {
 
     function init() {
       scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(25, width / height, 1, 1000);
+      camera = new THREE.PerspectiveCamera(20, width / height, 1, 1000);
       camera.position.z = 1;
 
       stars_geometry = new THREE.Geometry();
@@ -137,20 +137,20 @@ const About = () => {
         </div>
       </Profile>
       <Artwork>
-        <a href="http://hybear.com" target="_blank">
-          <BG>
-            <BGStars ref={StarContainer} />
-            <BGLight />
-          </BG>
-          <NatureGroup>
-            <SingleTree />
+        <BG>
+          <BGStars ref={StarContainer} />
+          <BGLight />
+        </BG>
+        <NatureGroup>
+          <SingleTree />
+          <a href="http://hybear.com" target="_blank">
             <Logo />
-            <TreesL />
-            <RabbitHole />
-            <TreesR />
-            <Fox />
-          </NatureGroup>
-        </a>
+          </a>
+          <TreesL />
+          <RabbitHole />
+          <TreesR />
+          <Fox />
+        </NatureGroup>
       </Artwork>
       <AboutProject>
         <Title>About Beauty Partner</Title>
