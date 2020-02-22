@@ -23,7 +23,7 @@ export const CartStyles = styled.div`
   transform: translateX(105%);
   transition: all 0.3s;
   top: 0;
-  z-index: 5;
+  z-index: 20;
   ${({ open }) => open && `transform: translateX(0);`};
 `;
 

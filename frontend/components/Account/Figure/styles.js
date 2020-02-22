@@ -7,6 +7,9 @@ export const FigureContainer = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
+  ${({ theme }) => theme.media.tablet`
+    display: none;
+  `}
 `;
 
 const bright = keyframes`

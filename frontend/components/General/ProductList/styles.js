@@ -7,4 +7,8 @@ export const ItemsList = styled.div`
   justify-content: center;
   margin: 0 auto;
   max-width: 1140px;
+  ${({ theme }) => theme.media.tablet`
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px
+  `}
 `;

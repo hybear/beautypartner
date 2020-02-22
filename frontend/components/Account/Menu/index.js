@@ -1,6 +1,17 @@
 import { useContext, useRef } from 'react';
 import { Me } from '../../Middleware';
-import { Drawer, AvatarContainer, Avatar, Balance, List, ListItem, SignOutContainer } from './styles';
+import {
+  Drawer,
+  AvatarContainer,
+  Avatar,
+  Balance,
+  List,
+  ListItem,
+  TabProfile,
+  TabOrders,
+  TabNewOrder,
+  SignOutContainer,
+} from './styles';
 import Link from 'next/link';
 import formatMoney from '../../../lib/formatMoney';
 
@@ -29,17 +40,26 @@ const Menu = props => {
       <List>
         <ListItem active={props.active == 'profile'}>
           <Link href="/profile">
-            <a>Profile</a>
+            <a>
+              <TabProfile />
+              Profile
+            </a>
           </Link>
         </ListItem>
         <ListItem active={props.active == 'orders'}>
           <Link href="/orders">
-            <a>Orders</a>
+            <a>
+              <TabOrders />
+              Orders
+            </a>
           </Link>
         </ListItem>
         <ListItem active={props.active == 'products'}>
           <Link href="/products">
-            <a>Products</a>
+            <a>
+              <TabNewOrder />
+              Products
+            </a>
           </Link>
         </ListItem>
       </List>

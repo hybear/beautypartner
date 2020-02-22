@@ -6,8 +6,7 @@ import { format, formatDistance, parseISO } from 'date-fns';
 import Link from 'next/link';
 
 // UI
-import { Title } from '../../styles'; // Content
-import { OrderStylesContainer, OrderStyles, OrderInfo, OrderItems, OrderButton } from './styles';
+import { OrderStylesContainer, OrderTitle, OrderStyles, OrderInfo, OrderItems, OrderButton } from './styles';
 
 // ANIMATIONS
 import Loading from '../../../../General/Animations/ContentLoading';
@@ -51,16 +50,16 @@ const Order = ({ id }) => {
         return (
           <OrderStylesContainer>
             <OrderStyles>
-              <Title>Order: {order.id}</Title>
+              <OrderTitle>Order: {order.id}</OrderTitle>
               <OrderInfo>
-                <span className="title">Status</span>
-                <span className="title">Date</span>
-                <span className="title">Total</span>
-                <span className="title">Cashback</span>
-                <span className="content status">{order.status}</span>
-                <span className="content date">{formatDistance(parseISO(order.createdAt), new Date())} ago</span>
-                <span className="content total">{formatMoney(order.total)}</span>
-                <span className="content cashback">
+                <span className="title status">Status</span>
+                <span className="title date">Date</span>
+                <span className="title total">Total</span>
+                <span className="title cashback">Cashback</span>
+                <span className="content statusVal">{order.status}</span>
+                <span className="content dateVal">{formatDistance(parseISO(order.createdAt), new Date())} ago</span>
+                <span className="content totalVal">{formatMoney(order.total)}</span>
+                <span className="content cashbackVal">
                   +
                   {formatMoney(
                     (order.items.reduce((tally, cartItem) => tally + cartItem.bestPrice * cartItem.quantity, 0) *

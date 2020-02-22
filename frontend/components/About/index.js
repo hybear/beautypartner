@@ -8,6 +8,7 @@ import {
   Medium,
   LinkedIn,
   Instagram,
+  Claw,
   Artwork,
   BG,
   BGLight,
@@ -21,7 +22,21 @@ import {
   TreesL,
   AboutProject,
   Title,
+  SubTitle,
   Text,
+  Design,
+  Figma,
+  Ilustrator,
+  Photoshop,
+  Development,
+  Node,
+  Yoga,
+  Prisma,
+  ReactI,
+  Apollo,
+  Jest,
+  CircleCI,
+  Snyk,
 } from './styles';
 
 const About = () => {
@@ -38,7 +53,7 @@ const About = () => {
 
     function init() {
       scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(25, width / height, 1, 10000);
+      camera = new THREE.PerspectiveCamera(25, width / height, 1, 1000);
       camera.position.z = 1;
 
       stars_geometry = new THREE.Geometry();
@@ -47,12 +62,12 @@ const About = () => {
         size: 1,
         sizeAttenuation: false,
         transparent: true,
-        opacity: 0.5,
+        opacity: 0.875,
         depthWrite: false,
         blending: THREE.NormalBlending,
       });
 
-      for (let i = 0; i < 1000; i++) {
+      for (let i = 0; i < 1500; i++) {
         let vertex = new THREE.Vector3();
         vertex.x = Math.random() * 2 - 1;
         vertex.y = Math.random() * 2 - 1;
@@ -85,33 +100,36 @@ const About = () => {
   return (
     <Content>
       <Profile>
-        <img className="picture" src="/assets/patrick.jpg" />
+        <div className="picture">
+          <img src="/assets/patrick.jpg" />
+          <Claw />
+        </div>
         <div className="content">
           <small className="content__sub">
             <i>The Artisan</i> behind this
           </small>
           <h1 className="content__name">Patrick Castro</h1>
           <p className="content__shortinfo">
-            I am a creative UX Developer, aka the man between design and development.
+            I am a creative <strong>UX Developer</strong>, also know as the man between design and development.
           </p>
           <ul className="content__social">
             <li>
-              <a href="https://medium.com/@hybear">
+              <a href="https://medium.com/@hybear" target="_blank">
                 <Medium />
               </a>
             </li>
             <li>
-              <a href="https://github.com/hybear">
+              <a href="https://github.com/hybear" target="_blank">
                 <GitHub />
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/thehybear">
+              <a href="https://www.instagram.com/thehybear" target="_blank">
                 <Instagram />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/hybear/">
+              <a href="https://www.linkedin.com/in/hybear/" target="_blank">
                 <LinkedIn />
               </a>
             </li>
@@ -119,26 +137,109 @@ const About = () => {
         </div>
       </Profile>
       <Artwork>
-        <BG>
-          <BGStars ref={StarContainer} />
-          <BGLight />
-        </BG>
-        <NatureGroup>
-          <SingleTree />
-          <Logo />
-          <TreesL />
-          <RabbitHole />
-          <TreesR />
-          <Fox />
-        </NatureGroup>
+        <a href="http://hybear.com" target="_blank">
+          <BG>
+            <BGStars ref={StarContainer} />
+            <BGLight />
+          </BG>
+          <NatureGroup>
+            <SingleTree />
+            <Logo />
+            <TreesL />
+            <RabbitHole />
+            <TreesR />
+            <Fox />
+          </NatureGroup>
+        </a>
       </Artwork>
       <AboutProject>
-        <Title>About</Title>
+        <Title>About Beauty Partner</Title>
         <Text>
           The concept was to create a easy way to a partners and sellers register their orders and track the status, the
           solution
         </Text>
       </AboutProject>
+      <div></div>
+      <Design>
+        <Title>Design</Title>
+        <SubTitle>Screens</SubTitle>
+        <div className="screensContainer">
+          <img className="screensContainer__screen desktop" src="/assets/screen-login-desk.jpg" />
+          <img className="screensContainer__screen mobile" src="/assets/screen-login-mob.jpg" />
+        </div>
+        <a
+          className="screensContainer__link"
+          href="https://www.figma.com/file/4OvON0hLKU1Rp2oPBnt3zE/Beauty-Partner?node-id=0%3A1"
+          target="_blank"
+        >
+          see all screens
+        </a>
+        <SubTitle>Tools</SubTitle>
+        <ul className="toolsContainer">
+          <li className="toolsContainer__tool">
+            <Figma />
+            <Text>Figma</Text>
+          </li>
+          <li className="toolsContainer__tool">
+            <Photoshop />
+            <Text>Photoshop</Text>
+          </li>
+          <li className="toolsContainer__tool">
+            <Ilustrator />
+            <Text>Ilustrator</Text>
+          </li>
+        </ul>
+      </Design>
+      <Development>
+        <Title>Development</Title>
+        <div className="proccessContainer">
+          <div className="proccessContainer__item backend">
+            <h4 className="title">Backend</h4>
+            <span className="highlight">
+              <Node />
+              <Yoga src="/assets/icon/YogaServer.png" />
+              <Prisma />
+            </span>
+            <ul className="proccessList">
+              <li className="proccessList__item">MySQL</li>
+              <li className="proccessList__item">Prisma</li>
+              <li className="proccessList__item">GraphQL</li>
+              <li className="proccessList__item">JWT Auth</li>
+              <li className="proccessList__item">Yoga Server</li>
+              <li className="proccessList__item">Node.js</li>
+            </ul>
+          </div>
+
+          <div className="proccessContainer__item frontend">
+            <h4 className="title">Frontend</h4>
+            <span className="highlight">
+              <ReactI />
+              <Apollo />
+              <Jest />
+            </span>
+            <ul className="proccessList">
+              <li className="proccessList__item">React</li>
+              <li className="proccessList__item">Next.js</li>
+              <li className="proccessList__item">Apollo Client</li>
+              <li className="proccessList__item">Styled Components</li>
+              <li className="proccessList__item">Jest + Enzyme</li>
+              <li className="proccessList__item">Three.js</li>
+            </ul>
+          </div>
+          <div className="proccessContainer__item cicd">
+            <h4 className="title">CI/CD</h4>
+            <span className="highlight">
+              <CircleCI src="/assets/icon/CircleCi.png" />
+              <Snyk src="/assets/icon/Snyk.png" />
+            </span>
+            <ul className="proccessList">
+              <li className="proccessList__item">Circle CI</li>
+              <li className="proccessList__item">Husky</li>
+              <li className="proccessList__item">Snyk</li>
+            </ul>
+          </div>
+        </div>
+      </Development>
     </Content>
   );
 };

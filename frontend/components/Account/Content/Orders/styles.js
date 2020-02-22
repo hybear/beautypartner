@@ -5,6 +5,7 @@ import { Button } from '../../../General/Form';
 export const OrderStylesContainer = styled.div`
   height: 100%;
   overflow: hidden;
+  padding-bottom: 20px;
 `;
 
 export const OrderTotal = styled.p`
@@ -36,9 +37,39 @@ export const OrderStyles = styled.li`
       transform: translateY(-3px);
     }
 
+    ${({ theme }) => theme.media.tablet`
+      grid-template: 
+      "idOrders idOrders" auto 
+      "idValOrders idValOrders" auto 
+      "statusOrders dateOrders" auto 
+      "statusValOrders dateValOrders" auto 
+      "totalOrders cashbackOrders" auto 
+      "totalValOrders cashbackValOrders" auto 
+      / auto;
+      grid-gap: 10px;
+  `}
+
     .order__title {
       font-family: 'QuadraSans-Bold', sans-serif;
       margin-bottom: 10px;
+      &.id {
+        grid-area: id;
+      }
+      &.status {
+        grid-area: status;
+      }
+      &.date {
+        grid-area: date;
+      }
+      &.total {
+        grid-area: total;
+      }
+      &.cashback {
+        grid-area: cashback;
+      }
+      ${({ theme }) => theme.media.tablet`
+        margin-bottom: 0;
+      `}
     }
 
     .order__info {
@@ -50,6 +81,21 @@ export const OrderStyles = styled.li`
           padding: 0.1em 0;
           border-radius: 2px;
         }
+      }
+      &.idVal {
+        grid-area: idVal;
+      }
+      &.statusVal {
+        grid-area: statusVal;
+      }
+      &.dateVal {
+        grid-area: dateVal;
+      }
+      &.totalVal {
+        grid-area: totalVal;
+      }
+      &.cashbackVal {
+        grid-area: cashbackVal;
       }
     }
   }
@@ -68,6 +114,11 @@ export const OrderList = styled.ul`
   overflow-x: hidden;
   overflow-y: auto;
   margin-bottom: 20px;
+
+  ${({ theme }) => theme.media.tablet`
+    margin-bottom: 10px;
+  `}
+
   &::-webkit-scrollbar-track {
     box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
     border-radius: 10px;

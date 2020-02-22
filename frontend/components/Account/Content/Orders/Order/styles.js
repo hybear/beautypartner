@@ -10,10 +10,14 @@ export const OrderTotal = styled.p`
   font-size: 1.1em;
   margin: 0 0 15px;
 `;
-export const OrderListTitle = styled.div`
+export const OrderTitle = styled(Title)`
   /* display: grid;
   grid-template-columns: repeat(5, auto);
   text-align: center; */
+  font-size: 1.5em;
+  ${({ theme }) => theme.media.tablet`
+    padding-top: 20px;
+  `}
 `;
 export const OrderStyles = styled.li`
   margin: 10px 0;
@@ -22,6 +26,9 @@ export const OrderStyles = styled.li`
   background: ${({ theme }) => theme.color.lightGrey};
   box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
   border-radius: 0.2rem;
+  ${({ theme }) => theme.media.tablet`
+    padding: 10px;
+  `}
 `;
 
 export const OrderInfo = styled.div`
@@ -42,7 +49,7 @@ export const OrderInfo = styled.div`
   }
 
   .content {
-    &.cashback {
+    &.cashbackVal {
       small {
         display: block;
         background: ${({ theme }) => theme.color.primary};
@@ -64,6 +71,8 @@ export const OrderItems = styled.div`
   padding: 10px;
   border-radius: 0.2em;
   grid-gap: 20px;
+  overflow-y: hidden;
+  overflow-x: auto;
   .title {
     text-align: center;
     font-family: 'QuadraSans-Bold', sans-serif;

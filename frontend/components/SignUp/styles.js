@@ -11,7 +11,11 @@ export const FormContainer = styled.div`
   height: 100vh;
 `;
 
-export const Form = styled(GForm)``;
+export const Form = styled(GForm)`
+  ${({ theme }) => theme.media.tablet`
+    padding: 0 20px;
+  `}
+`;
 
 export const Text = styled(GText)`
   display: block;

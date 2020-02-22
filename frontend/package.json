@@ -144,7 +144,18 @@
               }
             }
           ],
-          "inline-react-svg"
+          [
+            "inline-react-svg",
+            {
+              "svgo": {
+                "plugins": [
+                  {
+                    "cleanupIDs": false
+                  }
+                ]
+              }
+            }
+          ]
         ]
       },
       "production": {
@@ -171,7 +182,18 @@
               }
             }
           ],
-          "inline-react-svg"
+          [
+            "inline-react-svg",
+            {
+              "svgo": {
+                "plugins": [
+                  {
+                    "cleanupIDs": false
+                  }
+                ]
+              }
+            }
+          ]
         ]
       },
       "test": {
@@ -205,7 +227,18 @@
               }
             }
           ],
-          "inline-react-svg"
+          [
+            "inline-react-svg",
+            {
+              "svgo": {
+                "plugins": [
+                  {
+                    "cleanupIDs": false
+                  }
+                ]
+              }
+            }
+          ]
         ]
       }
     },
@@ -218,7 +251,18 @@
           "preprocess": false
         }
       ],
-      "inline-react-svg"
+      [
+        "inline-react-svg",
+        {
+          "svgo": {
+            "plugins": [
+              {
+                "cleanupIDs": false
+              }
+            ]
+          }
+        }
+      ]
     ]
   }
 }

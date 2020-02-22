@@ -42,6 +42,7 @@ const Products = props => {
         {({ data, error, loading }) => {
           if (loading) return <Loading isStoped={false} />;
           if (error) return <p>Error: {error.message}</p>;
+          console.log(data.items);
           return (
             <ItemsList>
               {data.items.map((item, i) => (

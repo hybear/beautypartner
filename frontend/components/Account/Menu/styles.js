@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import { Avatar as IAvatar } from '../../../public/assets/icon/Avatar.svg';
+import TabProfileIcon from '../../../public/assets/icon/Tab-Profile.svg';
+import TabOrdersIcon from '../../../public/assets/icon/Tab-Orders.svg';
+import TabNewOrderIcon from '../../../public/assets/icon/Tab-NewOrder.svg';
 
 export const Drawer = styled.div`
   grid-area: nav;
@@ -15,6 +18,15 @@ export const Drawer = styled.div`
   padding-top: 20px;
   background: #fafafa;
   border-right: solid 1px ${({ theme }) => theme.color.lightGrey};
+
+  ${({ theme }) => theme.media.tablet`
+    grid-template:
+      'avatar' auto
+      'balance' auto
+      / 100%;
+    padding-bottom: 20px;
+    border-right: none;
+  `}
 `;
 
 export const AvatarContainer = styled.div`
@@ -44,6 +56,14 @@ export const AvatarContainer = styled.div`
 
 export const List = styled.ul`
   grid-area: list;
+  ${({ theme }) => theme.media.tablet`
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+  `}
 `;
 
 export const ListItem = styled.li`
@@ -54,17 +74,40 @@ export const ListItem = styled.li`
   cursor: pointer;
   a {
     color: ${({ theme, active }) => (active ? theme.color.white : theme.color.grey)};
+    display: flex;
+    align-items: center;
     &:hover {
       text-decoration: none;
     }
   }
-  &:hover {
-    a {
-      transition: all 0.2s;
-      transform: translateX(5px);
-      display: block;
-    }
+  svg {
+    width: 1.5em;
+    transition: all 0.2s;
+    fill: ${({ theme, active }) => (active ? theme.color.white : theme.color.grey)};
+    margin-right: 5px;
   }
+
+  ${({ theme }) => theme.media.tablet`
+      width: 100%;
+      padding: 5px 20px;
+      font-size: 1em;
+      transition: all .2s;
+      border-right: solid 1px ${({ theme }) => theme.color.white};
+      box-shadow: ${({ active }) => (active ? 'inset 0px 1px 3px 0px rgba(0, 0, 0, 0.15)' : '')};
+      a{
+        flex-flow: column;
+      }
+      svg{
+        display: block;
+        margin: 5px auto;
+      }
+      &:nth-child(1){
+        border-radius: .5em 0 0 0;
+      }
+      &:nth-last-child(1){
+        border-radius: 0 .5em 0 0;
+      }
+  `}
 `;
 
 export const Avatar = styled(IAvatar)`
@@ -79,7 +122,7 @@ export const Avatar = styled(IAvatar)`
 `;
 
 export const Balance = styled.span`
-  grid-area: 'balance';
+  grid-area: balance;
   align-items: flex-end;
   background: ${({ theme }) => theme.color.primary};
   border-radius: 0.2em;
@@ -96,7 +139,16 @@ export const Balance = styled.span`
     font-family: QuadraSans-Regular;
     font-size: 0.75em;
   }
+  ${({ theme }) => theme.media.tablet`
+    padding: 10px;
+    width: 30%;
+    left: -5%;
+  `}
 `;
+
+export const TabProfile = styled(TabProfileIcon)``;
+export const TabOrders = styled(TabOrdersIcon)``;
+export const TabNewOrder = styled(TabNewOrderIcon)``;
 
 export const SignOutContainer = styled.div`
   grid-area: signout;
@@ -106,4 +158,11 @@ export const SignOutContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  ${({ theme }) => theme.media.tablet`
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     margin-bottom: 80px;
+  `}
 `;

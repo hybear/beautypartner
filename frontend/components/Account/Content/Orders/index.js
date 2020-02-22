@@ -49,16 +49,16 @@ const Order = order => (
   <OrderStyles>
     <Link href={`/orders/${order.id}`}>
       <a className="order">
-        <span className="order__title">Order ID</span>
-        <span className="order__title">Status</span>
-        <span className="order__title">Date</span>
-        <span className="order__title">Total</span>
-        <span className="order__title">Cashback</span>
-        <span className="order__info id">{order.id}</span>
-        <span className="order__info status">{order.status}</span>
-        <span className="order__info date">{formatDistance(parseISO(order.createdAt), new Date())} ago</span>
-        <span className="order__info total">{formatMoney(order.total)}</span>
-        <span className="order__info cashback">
+        <span className="order__title idOrders">Order ID</span>
+        <span className="order__title statusOrders">Status</span>
+        <span className="order__title dateOrders">Date</span>
+        <span className="order__title totalOrders">Total</span>
+        <span className="order__title cashbackOrders">Cashback</span>
+        <span className="order__info idValOrders">{order.id}</span>
+        <span className="order__info statusValOrders">{order.status}</span>
+        <span className="order__info dateValOrders">{formatDistance(parseISO(order.createdAt), new Date())} ago</span>
+        <span className="order__info totalValOrders">{formatMoney(order.total)}</span>
+        <span className="order__info cashbackValOrders">
           +
           {formatMoney(
             (order.items.reduce((tally, cartItem) => tally + cartItem.bestPrice * cartItem.quantity, 0) *

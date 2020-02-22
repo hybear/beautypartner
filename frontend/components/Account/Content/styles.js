@@ -23,6 +23,10 @@ export const Content = styled.div`
     border-radius: 10px;
     background-color: ${({ theme }) => theme.color.lightGrey};
   }
+
+  ${({ theme }) => theme.media.tablet`
+      margin: 40px 0 80px;
+  `}
 `;
 
 export const Title = styled.h2`

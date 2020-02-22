@@ -10,6 +10,15 @@ export const ProfileContainer = styled.div`
     'profile password' auto
     / 60% 1fr;
   grid-gap: 0 20px;
+  ${({ theme }) => theme.media.tablet`
+    grid-template:
+      'title' auto
+      'profile' auto
+      'password' auto
+      / 100%;
+      grid-gap: 20px;
+      margin-bottom: 20px;
+  `}
 `;
 
 export const Profile = styled.div`
@@ -31,6 +40,8 @@ export const Profile = styled.div`
 
 export const ProfileItem = styled.span`
   margin: 5px;
+  overflow-wrap: break-word;
+
   p {
     margin-bottom: 5px;
     font-size: 1.2em;

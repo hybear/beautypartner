@@ -11,7 +11,11 @@ export const FormContainer = styled.div`
   height: 100vh;
 `;
 
-export const Form = styled(GForm)``;
+export const Form = styled(GForm)`
+  ${({ theme }) => theme.media.tablet`
+    padding: 0 20px;
+  `}
+`;
 
 export const Text = styled(GText)`
   display: block;
@@ -36,6 +40,10 @@ export const SignInContainer = styled.main`
   grid-template-columns: 50% 50%;
   grid-template-rows: 100vh;
   width: 100%;
+  ${({ theme }) => theme.media.tablet`
+      grid-template-columns: 100%;
+      grid-template-rows: 10% auto;
+  `}
 `;
 
 export const BGImage = styled.img`
