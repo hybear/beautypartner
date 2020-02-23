@@ -19,6 +19,7 @@
     "apollo-boost": "^0.4.7",
     "babel-core": "^6.26.3",
     "babel-plugin-styled-components": "^1.10.7",
+    "casual": "^1.6.2",
     "cross-env": "^7.0.0",
     "date-fns": "^2.9.0",
     "downshift": "^5.0.0",
@@ -45,6 +46,7 @@
     "waait": "^1.0.5"
   },
   "devDependencies": {
+    "@apollo/react-testing": "^3.1.3",
     "@types/enzyme": "^3.10.5",
     "@types/jest": "^25.1.2",
     "@types/node": "^13.7.0",
@@ -59,6 +61,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "husky": "^4.2.1",
     "jest": "^25.1.0",
+    "jest-canvas-mock": "^2.2.0",
     "jest-watch-typeahead": "^0.4.2",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
@@ -69,6 +72,11 @@
     "tslint-config-airbnb": "^5.11.2",
     "tslint-react-hooks": "^2.2.1",
     "typescript": "^3.7.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
   },
   "prettier": {
     "singleQuote": true,
@@ -85,16 +93,16 @@
   },
   "jest": {
     "roots": [
-      "<rootDir>"
+      "<rootDir>/"
     ],
     "moduleFileExtensions": [
       "js",
       "ts",
-      "tsx",
-      "json"
+      "tsx"
     ],
     "setupFiles": [
-      "<rootDir>/jest.setup.js"
+      "<rootDir>/jest.setup.js",
+      "jest-canvas-mock"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>[/\\\\](build|docs|node_modules|.next)[/\\\\]"
@@ -106,7 +114,7 @@
     "testURL": "http://localhost",
     "transform": {
       "\\.(gql|graphql)$": "jest-transform-graphql",
-      "^.+\\.(js|ts|tsx)$": "babel-jest"
+      "^.+\\.js?$": "babel-jest"
     },
     "watchPlugins": [
       "jest-watch-typeahead/filename",

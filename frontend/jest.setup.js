@@ -1,4 +1,8 @@
-const enzyme = require('enzyme');
-const Adapter = require('enzyme-adapter-react-16');
+import { configure, shallow, render, mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-enzyme.configure({ adapter: new Adapter() });
+configure({ adapter: new Adapter() });
+
+global.shallow = shallow;
+global.render = render;
+global.mount = mount;

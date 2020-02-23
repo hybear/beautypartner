@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import formatMoney from '../../../../../lib/formatMoney';
@@ -45,11 +45,10 @@ const Order = ({ id }) => {
         if (loading) return <Loading isStoped={false} />;
 
         const { order } = data;
-        console.log(order);
 
         return (
           <OrderStylesContainer>
-            <OrderStyles>
+            <OrderStyles data-test="order">
               <OrderTitle>Order: {order.id}</OrderTitle>
               <OrderInfo>
                 <span className="title status">Status</span>
@@ -93,8 +92,9 @@ const Order = ({ id }) => {
   );
 };
 
-Order.PropTypes = {
-  id: PropTypes.string.isRequired,
+Order.propTypes = {
+  id: propTypes.string.isRequired,
 };
 
 export default Order;
+export { SINGLE_ORDER_QUERY };
