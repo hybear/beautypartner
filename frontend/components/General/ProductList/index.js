@@ -44,7 +44,7 @@ const Products = props => {
           if (error) return <p>Error: {error.message}</p>;
           console.log(data.items);
           return (
-            <ItemsList>
+            <ItemsList data-test="productList">
               {data.items.map((item, i) => (
                 <Product item={item} key={i} user={info} />
               ))}

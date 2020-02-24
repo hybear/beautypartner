@@ -81,13 +81,13 @@ const Orders = () => {
 
         const orders = data.orders;
         return (
-          <OrderStylesContainer>
+          <OrderStylesContainer data-test="orders">
             <Title>Orders</Title>
             <OrderTotal>You have a total of {orders.length} orders</OrderTotal>
             <OrderListTitle></OrderListTitle>
-            <OrderList>
-              {orders.map(order => (
-                <Order {...order} />
+            <OrderList className="orderList">
+              {orders.map((order, i) => (
+                <Order {...order} key={i} />
               ))}
             </OrderList>
             <OrderButton primary>
@@ -103,3 +103,4 @@ const Orders = () => {
 };
 
 export default Orders;
+export { ALL_ORDERS_QUERY };

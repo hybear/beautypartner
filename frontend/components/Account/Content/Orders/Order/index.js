@@ -74,8 +74,8 @@ const Order = ({ id }) => {
                 <span className="title">Quantity</span>
                 <span className="title">Unit Price</span>
                 <span className="title">Total</span>
-                {order.items.map(item => (
-                  <div className="item">
+                {order.items.map((item, i) => (
+                  <div className="item" key={i}>
                     <img className="item__picture" src={item.image} alt={item.title} />
                     <p>{item.title}</p>
                     <p>{item.quantity}</p>
