@@ -1,8 +1,8 @@
-import Order, { SINGLE_ORDER_QUERY } from '@components/Account/Content/Orders/Order';
+import Orders, { ALL_ORDERS_QUERY } from '@components/Account/Content/Orders';
 import { MockedProvider } from '@apollo/react-testing';
 import { act } from 'react-dom/test-utils';
 import wait from 'waait';
-import { fakeOrder } from '../../lib/testUtils';
+import { fakeOrder } from '../testUtils';
 import { ThemeProvider } from 'styled-components';
 import theme from '../../styles/theme';
 import toJson from 'enzyme-to-json';
@@ -11,21 +11,21 @@ export const ThemeProviderWrapper = ({ children }) => <ThemeProvider theme={them
 
 const mocks = [
   {
-    request: { query: SINGLE_ORDER_QUERY, variables: { id: 'abc123' } },
+    request: { query: ALL_ORDERS_QUERY },
     result: {
       data: {
-        order: fakeOrder(),
+        orders: [fakeOrder()],
       },
     },
   },
 ];
 
 describe('<Order/>', () => {
-  it('renders and displays information properly', async () => {
+  it('render orders and display one order', async () => {
     await act(async () => {
       const wrapper = mount(
         <MockedProvider mocks={mocks}>
-          <Order id="abc123" />
+          <Orders />
         </MockedProvider>,
         {
           wrappingComponent: ThemeProviderWrapper,
@@ -35,8 +35,8 @@ describe('<Order/>', () => {
       await wait(0);
       wrapper.update();
 
-      expect(toJson(wrapper.find('.totalVal')).children[0]).toContain('$400');
-      expect(toJson(wrapper.find('.dateVal')).children[0]).toContain('7 days');
+      expect(toJson(wrapper.find('.orderList ul')).children.length).toBe(1);
+      expect(toJson(wrapper.find('.orderList ul')).children[0].type).toBe('Order');
     });
   });
 
@@ -44,7 +44,7 @@ describe('<Order/>', () => {
     await act(async () => {
       const wrapper = mount(
         <MockedProvider mocks={mocks}>
-          <Order id="abc123" />
+          <Orders />
         </MockedProvider>,
         {
           wrappingComponent: ThemeProviderWrapper,
@@ -54,7 +54,7 @@ describe('<Order/>', () => {
       await wait(0);
       wrapper.update();
 
-      expect(wrapper.find('[data-test="order"]')).toMatchSnapshot();
+      expect(wrapper.find('[data-test="orders"]')).toMatchSnapshot();
     });
   });
 });

@@ -21,7 +21,7 @@ export const CartStyles = styled.div`
   position: fixed;
   right: 0;
   transform: translateX(105%);
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.27, 0.91, 0.38, 1.02);
   top: 0;
   z-index: 20;
   ${({ open }) => open && `transform: translateX(0);`};

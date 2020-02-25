@@ -2,12 +2,9 @@ import styled from 'styled-components';
 
 export const Content = styled.div`
   grid-area: cont;
-  margin: 0 0 0 40px;
-  padding-top: 40px;
-  /* padding: 1em 1em 0; */
-  margin-top: 20px;
-  overflow: auto;
+  margin: 20px 0 0 40px;
   padding: 0 20px 0;
+  overflow: auto;
   &::-webkit-scrollbar-track {
     box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
     border-radius: 10px;

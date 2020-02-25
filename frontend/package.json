@@ -41,6 +41,7 @@
     "react-lottie": "^1.2.3",
     "react-stripe-checkout": "^2.6.3",
     "react-three-fiber": "^4.0.14",
+    "snyk": "^1.296.1",
     "three": "^0.113.2",
     "waait": "^1.0.5"
   },
@@ -76,7 +77,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test"
+      "pre-commit": "npm run snyk"
     }
   },
   "prettier": {

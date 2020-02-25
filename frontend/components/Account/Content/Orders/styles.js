@@ -4,7 +4,6 @@ import { Button } from '../../../General/Form';
 
 export const OrderStylesContainer = styled.div`
   height: 100%;
-  overflow: hidden;
   padding-bottom: 20px;
 `;
 
@@ -102,6 +101,7 @@ export const OrderStyles = styled.li`
 `;
 
 export const OrderButton = styled(Button)`
+  margin-bottom: 40px;
   a {
     color: ${({ theme }) => theme.color.white};
     &:hover {

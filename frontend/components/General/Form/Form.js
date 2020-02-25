@@ -21,7 +21,7 @@ const Form = styled.form`
     position: absolute;
     right: -20px;
     /* top: 45px; */
-    transform: translateY(-70%);
+    transform: translateY(-75%);
   }
 `;
 

@@ -1,0 +1,9 @@
+myNextApplication:
+  component: serverless-next.js
+  inputs:
+    cloudfront:
+      defaults: # options for lambda that handle SSR
+        forward:
+          headers: [CloudFront-Is-Desktop-Viewer, CloudFront-Is-Mobile-Viewer, CloudFront-Is-Tablet-Viewer]
+      api: # options for lambdas that handle API request
+        ttl: 10
