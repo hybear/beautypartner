@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Item/> renders and matches the snapshot 1`] = `
+<styles__CardStyles
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <Link
+    as={
+      Object {
+        "pathname": "/p/A-cool-product/ABC123",
+      }
+    }
+    href={
+      Object {
+        "pathname": "/p/[name]/[id]",
+      }
+    }
+  >
+    <a>
+      <styles__Image
+        alt="A cool product"
+        src="parfum.jpg"
+      />
+      <styles__Title>
+        A cool product
+      </styles__Title>
+      <styles__PriceTag>
+        $50
+      </styles__PriceTag>
+      <styles__Description
+        center={true}
+      >
+        this is really cool
+      </styles__Description>
+    </a>
+  </Link>
+  <styles__AddToCart
+    hover={false}
+  >
+    <AddToCart
+      id="ABC123"
+    />
+  </styles__AddToCart>
+</styles__CardStyles>
+`;

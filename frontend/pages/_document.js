@@ -12,8 +12,21 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
-        <Head>{this.props.styleTags}</Head>
+      <html lang="en">
+        <Head>
+          <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+          <link rel="manifest" href="/manifest.json" />
+
+          <link rel="stylesheet" type="text/css" href="/nprogress.css" />
+
+          <link rel="icon" type="image/png" href="/favicon.png" />
+          <link rel="apple-touch-icon" href="/images/favicon.png" />
+
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta name="theme-color" content="#12100E" />
+          {this.props.styleTags}
+        </Head>
         <body>
           <Main />
           <NextScript />

@@ -1,0 +1,290 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Order/> matches snapshot 1`] = `
+Array [
+  <styles__OrderStyles
+    data-test="order"
+  >
+    <li
+      className="styles__OrderStyles-n7vcma-3 fzqfIU"
+      data-test="order"
+    >
+      <styles__OrderTitle>
+        <h2
+          className="styles__Title-sc-1ht2lvb-1 styles__OrderTitle-n7vcma-2 dxcwjf"
+        >
+          Order: 
+          ord123
+        </h2>
+      </styles__OrderTitle>
+      <styles__OrderInfo>
+        <div
+          className="styles__OrderInfo-n7vcma-4 YySyk"
+        >
+          <span
+            className="title status"
+          >
+            Status
+          </span>
+          <span
+            className="title date"
+          >
+            Date
+          </span>
+          <span
+            className="title total"
+          >
+            Total
+          </span>
+          <span
+            className="title cashback"
+          >
+            Cashback
+          </span>
+          <span
+            className="content statusVal"
+          >
+            APROVED
+          </span>
+          <span
+            className="content dateVal"
+          >
+            7 days
+             ago
+          </span>
+          <span
+            className="content totalVal"
+          >
+            $400
+          </span>
+          <span
+            className="content cashbackVal"
+          >
+            +
+            $4.23
+            <small>
+              5
+              %
+            </small>
+          </span>
+        </div>
+      </styles__OrderInfo>
+      <styles__OrderItems>
+        <div
+          className="styles__OrderItems-n7vcma-5 jTvrcM"
+        >
+          <span
+            className="title"
+          >
+            Photo
+          </span>
+          <span
+            className="title"
+          >
+            Title
+          </span>
+          <span
+            className="title"
+          >
+            Quantity
+          </span>
+          <span
+            className="title"
+          >
+            Unit Price
+          </span>
+          <span
+            className="title"
+          >
+            Total
+          </span>
+          <div
+            className="item"
+            key="0"
+          >
+            <img
+              alt="soluta non omnis consequatur enim quia autem"
+              className="item__picture"
+              src="reprehenderit.jpg"
+            />
+            <p>
+              soluta non omnis consequatur enim quia autem
+            </p>
+            <p>
+              1
+            </p>
+            <p>
+              $42.34
+            </p>
+            <p>
+              $42.34
+            </p>
+          </div>
+          <div
+            className="item"
+            key="1"
+          >
+            <img
+              alt="quia sed exercitationem omnis laborum exercitationem est"
+              className="item__picture"
+              src="sint.jpg"
+            />
+            <p>
+              quia sed exercitationem omnis laborum exercitationem est
+            </p>
+            <p>
+              1
+            </p>
+            <p>
+              $42.34
+            </p>
+            <p>
+              $42.34
+            </p>
+          </div>
+        </div>
+      </styles__OrderItems>
+    </li>
+  </styles__OrderStyles>,
+  <li
+    className="styles__OrderStyles-n7vcma-3 fzqfIU"
+    data-test="order"
+  >
+    <styles__OrderTitle>
+      <h2
+        className="styles__Title-sc-1ht2lvb-1 styles__OrderTitle-n7vcma-2 dxcwjf"
+      >
+        Order: 
+        ord123
+      </h2>
+    </styles__OrderTitle>
+    <styles__OrderInfo>
+      <div
+        className="styles__OrderInfo-n7vcma-4 YySyk"
+      >
+        <span
+          className="title status"
+        >
+          Status
+        </span>
+        <span
+          className="title date"
+        >
+          Date
+        </span>
+        <span
+          className="title total"
+        >
+          Total
+        </span>
+        <span
+          className="title cashback"
+        >
+          Cashback
+        </span>
+        <span
+          className="content statusVal"
+        >
+          APROVED
+        </span>
+        <span
+          className="content dateVal"
+        >
+          7 days
+           ago
+        </span>
+        <span
+          className="content totalVal"
+        >
+          $400
+        </span>
+        <span
+          className="content cashbackVal"
+        >
+          +
+          $4.23
+          <small>
+            5
+            %
+          </small>
+        </span>
+      </div>
+    </styles__OrderInfo>
+    <styles__OrderItems>
+      <div
+        className="styles__OrderItems-n7vcma-5 jTvrcM"
+      >
+        <span
+          className="title"
+        >
+          Photo
+        </span>
+        <span
+          className="title"
+        >
+          Title
+        </span>
+        <span
+          className="title"
+        >
+          Quantity
+        </span>
+        <span
+          className="title"
+        >
+          Unit Price
+        </span>
+        <span
+          className="title"
+        >
+          Total
+        </span>
+        <div
+          className="item"
+          key="0"
+        >
+          <img
+            alt="soluta non omnis consequatur enim quia autem"
+            className="item__picture"
+            src="reprehenderit.jpg"
+          />
+          <p>
+            soluta non omnis consequatur enim quia autem
+          </p>
+          <p>
+            1
+          </p>
+          <p>
+            $42.34
+          </p>
+          <p>
+            $42.34
+          </p>
+        </div>
+        <div
+          className="item"
+          key="1"
+        >
+          <img
+            alt="quia sed exercitationem omnis laborum exercitationem est"
+            className="item__picture"
+            src="sint.jpg"
+          />
+          <p>
+            quia sed exercitationem omnis laborum exercitationem est
+          </p>
+          <p>
+            1
+          </p>
+          <p>
+            $42.34
+          </p>
+          <p>
+            $42.34
+          </p>
+        </div>
+      </div>
+    </styles__OrderItems>
+  </li>,
+]
+`;

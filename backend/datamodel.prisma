@@ -7,6 +7,21 @@ enum Permission {
   PERMISSIONUPDATE
 }
 
+enum Badges {
+  BeautyPartner
+  FirstOrder
+  Explorer
+  PlayerOne
+  PopStar
+  Prospecter
+  GlobalSeller
+  Diamond
+  SeasonLeader
+  Influencer
+  RisingStar
+  Focus
+}
+
 enum OrderStatus {
   VALIDATING
   APROVED
@@ -16,15 +31,16 @@ enum OrderStatus {
 type User {
   id: ID! @id
   name: String!
-  document: String! @unique
-  email: String!
+  document: String!
+  email: String! @unique
   password: String!
   birthday: DateTime
   phone: String
-  balance: Int
+  balance: Float @default(value:0)
   resetToken: String
   resetTokenExpiry: String
   permissions: [Permission] @scalarList(strategy: RELATION)
+  badges: [Badges] @scalarList(strategy: RELATION)
   cart: [CartItem!]!
 }
 
@@ -70,11 +86,11 @@ type OrderItem {
 type Order {
   id: ID! @id
   items: [OrderItem!]!
-  total: Int!
+  total: Float!
   user: User!
   charge: String
   paymentMethod: String!
-  cashback: Int! @default(value: 0)
+  cashback: Int! @default(value: 5)
   status: [OrderStatus] @scalarList(strategy: RELATION)
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt

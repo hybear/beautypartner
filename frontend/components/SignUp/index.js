@@ -7,8 +7,8 @@ import Router from 'next/router';
 import InputMask from 'react-input-mask';
 
 // UI
-import { Form, Button, Input, Label, Info } from '../General/Form';
-import { FormContainer, Text, Logo } from './styles';
+import { Input, Label, Info } from '../General/Form';
+import { FormContainer, Form, Button, Text, Logo } from './styles';
 
 // ANIMATIONS
 import Checked from '../General/Animations/Checked';
@@ -70,6 +70,7 @@ const SignUp = () => {
                   <Label htmlFor="fullname">Full Name*</Label>
                   <Input
                     name="fullname"
+                    id="fullname"
                     type="text"
                     required
                     placeholder="Ex: Lydia Hallie"
@@ -90,6 +91,7 @@ const SignUp = () => {
                   <Label htmlFor="email">E-mail*</Label>
                   <Input
                     name="email"
+                    id="email"
                     type="email"
                     required
                     placeholder="Ex: lydia.hallie@email.com"
@@ -118,6 +120,7 @@ const SignUp = () => {
                     {() => (
                       <Input
                         name="document"
+                        id="document"
                         type="text"
                         required
                         checked={
@@ -143,6 +146,7 @@ const SignUp = () => {
                   <Label htmlFor="password">Password*</Label>
                   <Input
                     name="password"
+                    id="password"
                     required
                     placeholder="*******"
                     value={newUser.password}
@@ -172,6 +176,7 @@ const SignUp = () => {
               <Button
                 type="submit"
                 primary
+                fullWidth
                 disabled={
                   loading ||
                   /^\w+$/.test(newUser.name) ||

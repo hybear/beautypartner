@@ -1,0 +1,354 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Order/> matches snapshot 1`] = `
+Array [
+  <styles__OrderStylesContainer
+    data-test="orders"
+  >
+    <div
+      className="styles__OrderStylesContainer-sc-1jlrbgn-0 eBvmnw"
+      data-test="orders"
+    >
+      <styles__Title>
+        <h2
+          className="styles__Title-sc-1ht2lvb-1 cmkMpU"
+        >
+          Orders
+        </h2>
+      </styles__Title>
+      <styles__OrderTotal>
+        <p
+          className="styles__OrderTotal-sc-1jlrbgn-1 imIAYO"
+        >
+          You have a total of 
+          1
+           orders
+        </p>
+      </styles__OrderTotal>
+      <styles__OrderListTitle>
+        <div
+          className="styles__OrderListTitle-sc-1jlrbgn-2 hZDYPi"
+        />
+      </styles__OrderListTitle>
+      <styles__OrderList
+        className="orderList"
+      >
+        <ul
+          className="styles__OrderList-sc-1jlrbgn-5 hYEEes orderList"
+        >
+          <Order
+            __typename="Order"
+            cashback={5}
+            charge="ch_123"
+            createdAt="2020-02-17T01:52:31.269Z"
+            id="ord123"
+            items={
+              Array [
+                Object {
+                  "__typename": "OrderItem",
+                  "bestPrice": 4234,
+                  "description": "et modi tenetur amet modi reprehenderit omnis",
+                  "id": "3a430a73-c9e9-4bcc-b46a-41618965ffea",
+                  "image": "reprehenderit.jpg",
+                  "listPrice": 4234,
+                  "quantity": 1,
+                  "title": "soluta non omnis consequatur enim quia autem",
+                },
+                Object {
+                  "__typename": "OrderItem",
+                  "bestPrice": 4234,
+                  "description": "sapiente laudantium molestias assumenda quasi adipisci mollitia",
+                  "id": "2393e090-592f-4d03-b808-c9d81098deec",
+                  "image": "sint.jpg",
+                  "listPrice": 4234,
+                  "quantity": 1,
+                  "title": "quia sed exercitationem omnis laborum exercitationem est",
+                },
+              ]
+            }
+            key="0"
+            paymentMethod="stripe"
+            status={
+              Array [
+                "APROVED",
+              ]
+            }
+            total={40000}
+            user={
+              Object {
+                "__typename": "User",
+                "id": "4234",
+              }
+            }
+          >
+            <styles__OrderStyles>
+              <li
+                className="styles__OrderStyles-sc-1jlrbgn-3 dgXqto"
+              >
+                <Link
+                  href="/orders/ord123"
+                >
+                  <a
+                    className="order"
+                    href="/orders/ord123"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    <span
+                      className="order__title idOrders"
+                    >
+                      Order ID
+                    </span>
+                    <span
+                      className="order__title statusOrders"
+                    >
+                      Status
+                    </span>
+                    <span
+                      className="order__title dateOrders"
+                    >
+                      Date
+                    </span>
+                    <span
+                      className="order__title totalOrders"
+                    >
+                      Total
+                    </span>
+                    <span
+                      className="order__title cashbackOrders"
+                    >
+                      Cashback
+                    </span>
+                    <span
+                      className="order__info idValOrders"
+                    >
+                      ord123
+                    </span>
+                    <span
+                      className="order__info statusValOrders"
+                    >
+                      APROVED
+                    </span>
+                    <span
+                      className="order__info dateValOrders"
+                    >
+                      7 days
+                       ago
+                    </span>
+                    <span
+                      className="order__info totalValOrders"
+                    >
+                      $400
+                    </span>
+                    <span
+                      className="order__info cashbackValOrders"
+                    >
+                      +
+                      $4.23
+                      <small>
+                        5
+                        %
+                      </small>
+                    </span>
+                  </a>
+                </Link>
+              </li>
+            </styles__OrderStyles>
+          </Order>
+        </ul>
+      </styles__OrderList>
+      <styles__OrderButton
+        primary={true}
+      >
+        <button
+          className="Button-sc-1hbypwi-0 styles__OrderButton-sc-1jlrbgn-4 ffEmAk"
+        >
+          <Link
+            href="/products"
+          >
+            <a
+              href="/products"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              New Order
+            </a>
+          </Link>
+        </button>
+      </styles__OrderButton>
+    </div>
+  </styles__OrderStylesContainer>,
+  <div
+    className="styles__OrderStylesContainer-sc-1jlrbgn-0 eBvmnw"
+    data-test="orders"
+  >
+    <styles__Title>
+      <h2
+        className="styles__Title-sc-1ht2lvb-1 cmkMpU"
+      >
+        Orders
+      </h2>
+    </styles__Title>
+    <styles__OrderTotal>
+      <p
+        className="styles__OrderTotal-sc-1jlrbgn-1 imIAYO"
+      >
+        You have a total of 
+        1
+         orders
+      </p>
+    </styles__OrderTotal>
+    <styles__OrderListTitle>
+      <div
+        className="styles__OrderListTitle-sc-1jlrbgn-2 hZDYPi"
+      />
+    </styles__OrderListTitle>
+    <styles__OrderList
+      className="orderList"
+    >
+      <ul
+        className="styles__OrderList-sc-1jlrbgn-5 hYEEes orderList"
+      >
+        <Order
+          __typename="Order"
+          cashback={5}
+          charge="ch_123"
+          createdAt="2020-02-17T01:52:31.269Z"
+          id="ord123"
+          items={
+            Array [
+              Object {
+                "__typename": "OrderItem",
+                "bestPrice": 4234,
+                "description": "et modi tenetur amet modi reprehenderit omnis",
+                "id": "3a430a73-c9e9-4bcc-b46a-41618965ffea",
+                "image": "reprehenderit.jpg",
+                "listPrice": 4234,
+                "quantity": 1,
+                "title": "soluta non omnis consequatur enim quia autem",
+              },
+              Object {
+                "__typename": "OrderItem",
+                "bestPrice": 4234,
+                "description": "sapiente laudantium molestias assumenda quasi adipisci mollitia",
+                "id": "2393e090-592f-4d03-b808-c9d81098deec",
+                "image": "sint.jpg",
+                "listPrice": 4234,
+                "quantity": 1,
+                "title": "quia sed exercitationem omnis laborum exercitationem est",
+              },
+            ]
+          }
+          key="0"
+          paymentMethod="stripe"
+          status={
+            Array [
+              "APROVED",
+            ]
+          }
+          total={40000}
+          user={
+            Object {
+              "__typename": "User",
+              "id": "4234",
+            }
+          }
+        >
+          <styles__OrderStyles>
+            <li
+              className="styles__OrderStyles-sc-1jlrbgn-3 dgXqto"
+            >
+              <Link
+                href="/orders/ord123"
+              >
+                <a
+                  className="order"
+                  href="/orders/ord123"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  <span
+                    className="order__title idOrders"
+                  >
+                    Order ID
+                  </span>
+                  <span
+                    className="order__title statusOrders"
+                  >
+                    Status
+                  </span>
+                  <span
+                    className="order__title dateOrders"
+                  >
+                    Date
+                  </span>
+                  <span
+                    className="order__title totalOrders"
+                  >
+                    Total
+                  </span>
+                  <span
+                    className="order__title cashbackOrders"
+                  >
+                    Cashback
+                  </span>
+                  <span
+                    className="order__info idValOrders"
+                  >
+                    ord123
+                  </span>
+                  <span
+                    className="order__info statusValOrders"
+                  >
+                    APROVED
+                  </span>
+                  <span
+                    className="order__info dateValOrders"
+                  >
+                    7 days
+                     ago
+                  </span>
+                  <span
+                    className="order__info totalValOrders"
+                  >
+                    $400
+                  </span>
+                  <span
+                    className="order__info cashbackValOrders"
+                  >
+                    +
+                    $4.23
+                    <small>
+                      5
+                      %
+                    </small>
+                  </span>
+                </a>
+              </Link>
+            </li>
+          </styles__OrderStyles>
+        </Order>
+      </ul>
+    </styles__OrderList>
+    <styles__OrderButton
+      primary={true}
+    >
+      <button
+        className="Button-sc-1hbypwi-0 styles__OrderButton-sc-1jlrbgn-4 ffEmAk"
+      >
+        <Link
+          href="/products"
+        >
+          <a
+            href="/products"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            New Order
+          </a>
+        </Link>
+      </button>
+    </styles__OrderButton>
+  </div>,
+]
+`;

@@ -27,6 +27,7 @@ const color = {
   secondary: '#938451',
   white: '#F8F8F8',
   rawWhite: '#FFF',
+  lightGrey: '#E6E6E6',
   grey: '#76777A',
   black: '#12100E',
   blue: '#1976D2',
@@ -35,9 +36,14 @@ const color = {
   success: '#46A47C',
 };
 
+const misc = {
+  bs: '0 2px 15px 0px rgba(0,0,0, 0.09)',
+};
+
 export const theme = {
   color,
   media,
+  misc,
 };
 
 export const styled = baseStyled;

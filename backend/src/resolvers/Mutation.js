@@ -83,7 +83,10 @@ const Mutations = {
         data: {
           ...args,
           password,
-          permissions: { set: ["USER"] }
+          permissions: { set: ["USER"] },
+          badges: {
+            set: ["BeautyPartner"]
+          }
         }
       },
       info
@@ -326,6 +329,8 @@ const Mutations = {
                 name
                 email 
                 balance
+                badges
+                permissions
                 cart { 
                     id 
                     quantity 
@@ -342,12 +347,32 @@ const Mutations = {
             }`
     );
 
-    const amount = user.cart.reduce(
+    const cashbackPercent = user.badges.map(badge => {
+      if (badge == "Diamond") return 20; // 20
+      if (badge == "SeasonLeader") return 15; // 15
+      if (badge == "RisingStar") return 10; // 10
+      if (badge == "BeautyPartner") return 5; // 5
+    });
+
+    // console.log(cashbackPercent);
+    let total = user.cart.reduce(
       (tally, cartItem) => tally + cartItem.item.bestPrice * cartItem.quantity,
       0
     );
+    // console.log(total);
+    const amount = total - ((total * cashbackPercent) / 100);
+
+    // console.log(amount);
 
     console.log(`Going to charge for a total of ${amount}`);
+
+    const orders = await ctx.db.query.orders({
+      where: { 
+          user: {
+              id: ctx.request.userId
+          } 
+      }
+    }, info)
 
     // Convert CartItems to OrderItems
     const orderItems = user.cart.map(cartItem => {
@@ -368,7 +393,8 @@ const Mutations = {
           paymentMethod: args.paymentMethod,
           items: { create: orderItems },
           user: { connect: { id: userId } },
-          status: { set: ["PAYMENT_WAITING"] }
+          status: { set: ["VALIDATING"] },
+          cashback: cashbackPercent
         }
       })
       .catch();
@@ -381,9 +407,11 @@ const Mutations = {
       }
     });
 
+    const stripeAmount = amount * 100
+    
     if (args.paymentMethod == "stripe") {
       const charge = await stripe.charges.create({
-        amount,
+        amount: stripeAmount,
         currency: "USD",
         source: args.token
       });
@@ -392,15 +420,54 @@ const Mutations = {
         where: { id: order.id },
         data: {
           charge: charge.id,
-          status: { set: ["PAYMENT_OK"] }
+          status: { set: ["APROVED"] }
         }
       });
 
       const updateBalance = await ctx.db.mutation.updateUser({
         where: { id: userId },
         data: {
-          balance: user.balance + amount / 10
+          balance: user.balance + ((total * cashbackPercent) / 100)
         }
+      });
+    
+      // Badges
+      const firstOrder = await user.badges.map(badge => {
+        if(badge == "FirstOrder") return
+        ctx.db.mutation.updateUser({
+          where: { id: userId },
+          data: {
+            badges: {
+              set: ["FirstOrder", ...user.badges]
+            }
+          }
+        });
+      });
+
+      const Prospecter = await user.badges.map(badge => {
+        if(badge == "Prospecter" || orders.length <= 20) return
+        console.log(orders.length)
+        ctx.db.mutation.updateUser({
+          where: { id: userId },
+          data: {
+            badges: {
+              set: [...user.badges, "Prospecter"]
+            }
+          }
+        });
+      });
+
+      const Influencer = await user.badges.map(badge => {
+        if(badge == "Influencer" || orders.length <= 60) return
+        console.log(orders.length)
+        ctx.db.mutation.updateUser({
+          where: { id: userId },
+          data: {
+            badges: {
+              set: [...user.badges, "Influencer"]
+            }
+          }
+        });
       });
 
       return chargeOrder;

@@ -6,5 +6,5 @@
     "titleBar.inactiveBackground": "#FAF3E3"
   },
   "git.ignoreLimitWarning": true,
-  "editor.formatOnSave": true
+  // "editor.formatOnSave": true
 }
