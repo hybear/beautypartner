@@ -84,6 +84,7 @@ type User {
   balance: Float
   phone: String
   permissions: [Permission!]!
+  badges: [Badges!]!
   cart: [CartItem!]!
   orders: [OrderItem]
 }
