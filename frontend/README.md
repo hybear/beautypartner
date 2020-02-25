@@ -35,5 +35,5 @@ SSR Aplication on top of the Next 9 features
 .._ Snyk
 
 ## Todo
-.._ AWS EC2
-.._ AWS S3
+.._ Deploy Backend AWS Apex Up Prisma GraphQL
+.._ Deploy Frontend Serverless Lambda S3 w/ Cloud Formation
