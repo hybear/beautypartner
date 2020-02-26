@@ -38,6 +38,7 @@ type User {
   phone: String
   balance: Float @default(value:0)
   resetToken: String
+  avatar: String @default(value:"Avatar1")
   resetTokenExpiry: String
   permissions: [Permission] @scalarList(strategy: RELATION)
   badges: [Badges] @scalarList(strategy: RELATION)

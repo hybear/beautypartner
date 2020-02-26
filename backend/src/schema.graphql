@@ -51,7 +51,9 @@ type Mutation {
 
   updatePermissions(permissions: [Permission], userId: ID!): User
 
-  updateInfos(id: ID!, name: String, birthday: DateTime, phone: String): User
+  updateInfos(id: ID!, name: String, birthday: DateTime, document: String,  phone: String): User
+
+  updateAvatar(id: ID!, avatar: String): User
 
   addToCart(id: ID!): CartItem
 
@@ -83,6 +85,7 @@ type User {
   birthday: DateTime
   balance: Float
   phone: String
+  avatar: String
   permissions: [Permission!]!
   badges: [Badges!]!
   cart: [CartItem!]!

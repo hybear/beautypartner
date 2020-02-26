@@ -243,7 +243,26 @@ const Mutations = {
         data: {
           name: args.name,
           birthday: args.birthday,
+          document: args.document,
           phone: args.phone
+        },
+        where: {
+          id: args.id
+        }
+      },
+      info
+    );
+  },
+
+  updateAvatar(parent, args, ctx, info) {
+    // if(!ctx.request.userId){
+    //     throw new Error('You must be logged in!');
+    // }
+
+    return ctx.db.mutation.updateUser(
+      {
+        data: {
+          avatar: args.avatar
         },
         where: {
           id: args.id
@@ -347,14 +366,23 @@ const Mutations = {
             }`
     );
 
-    const cashbackPercent = user.badges.map(badge => {
+    const cashbackPercent = user.badges.reduce(badge => {
       if (badge == "Diamond") return 20; // 20
       if (badge == "SeasonLeader") return 15; // 15
       if (badge == "RisingStar") return 10; // 10
       if (badge == "BeautyPartner") return 5; // 5
+      ctx.db.mutation.updateUser({
+        where: { id: userId },
+        data: {
+          badges: {
+            set: [...user.badges, "BeautyPartner"]
+          }
+        }
+      });
+      return 5
     });
 
-    // console.log(cashbackPercent);
+    console.log(cashbackPercent);
     let total = user.cart.reduce(
       (tally, cartItem) => tally + cartItem.item.bestPrice * cartItem.quantity,
       0
@@ -432,20 +460,31 @@ const Mutations = {
       });
     
       // Badges
-      const firstOrder = await user.badges.map(badge => {
-        if(badge == "FirstOrder") return
+      const firstOrder = await user.badges.some(badge => 
+        badge == "FirstOrder"
+      );
+
+      const Prospecter = await user.badges.some(badge => 
+        badge != "Prospecter" && orders.length >= 20
+      );
+
+      const Influencer = await user.badges.some(badge => 
+        badge != "Influencer" && orders.length >= 60
+      );
+
+
+      if(firstOrder){
         ctx.db.mutation.updateUser({
           where: { id: userId },
           data: {
             badges: {
-              set: ["FirstOrder", ...user.badges]
+              set: [...user.badges, "FirstOrder"]
             }
           }
         });
-      });
-
-      const Prospecter = await user.badges.map(badge => {
-        if(badge == "Prospecter" || orders.length <= 20) return
+      }
+      
+      if(Prospecter){
         console.log(orders.length)
         ctx.db.mutation.updateUser({
           where: { id: userId },
@@ -455,10 +494,9 @@ const Mutations = {
             }
           }
         });
-      });
+      }
 
-      const Influencer = await user.badges.map(badge => {
-        if(badge == "Influencer" || orders.length <= 60) return
+      if(Influencer){
         console.log(orders.length)
         ctx.db.mutation.updateUser({
           where: { id: userId },
@@ -468,9 +506,10 @@ const Mutations = {
             }
           }
         });
-      });
+      }
 
       return chargeOrder;
+
     } else {
       return order;
     }
