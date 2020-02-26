@@ -6,12 +6,12 @@ Array [
     data-test="orders"
   >
     <div
-      className="styles__OrderStylesContainer-sc-1jlrbgn-0 eBvmnw"
+      className="styles__OrderStylesContainer-sc-1jlrbgn-0 cBYkdr"
       data-test="orders"
     >
       <styles__Title>
         <h2
-          className="styles__Title-sc-1ht2lvb-1 cmkMpU"
+          className="Title-qmiaj1-0 styles__Title-sc-1ht2lvb-1 bSEGnV"
         >
           Orders
         </h2>
@@ -83,7 +83,7 @@ Array [
           >
             <styles__OrderStyles>
               <li
-                className="styles__OrderStyles-sc-1jlrbgn-3 dgXqto"
+                className="styles__OrderStyles-sc-1jlrbgn-3 fdmfdY"
               >
                 <Link
                   href="/orders/ord123"
@@ -132,7 +132,7 @@ Array [
                     <span
                       className="order__info dateValOrders"
                     >
-                      7 days
+                      9 days
                        ago
                     </span>
                     <span
@@ -161,7 +161,7 @@ Array [
         primary={true}
       >
         <button
-          className="Button-sc-1hbypwi-0 styles__OrderButton-sc-1jlrbgn-4 ffEmAk"
+          className="Button-sc-1hbypwi-0 styles__OrderButton-sc-1jlrbgn-4 kPSbpN"
         >
           <Link
             href="/products"
@@ -179,12 +179,12 @@ Array [
     </div>
   </styles__OrderStylesContainer>,
   <div
-    className="styles__OrderStylesContainer-sc-1jlrbgn-0 eBvmnw"
+    className="styles__OrderStylesContainer-sc-1jlrbgn-0 cBYkdr"
     data-test="orders"
   >
     <styles__Title>
       <h2
-        className="styles__Title-sc-1ht2lvb-1 cmkMpU"
+        className="Title-qmiaj1-0 styles__Title-sc-1ht2lvb-1 bSEGnV"
       >
         Orders
       </h2>
@@ -256,7 +256,7 @@ Array [
         >
           <styles__OrderStyles>
             <li
-              className="styles__OrderStyles-sc-1jlrbgn-3 dgXqto"
+              className="styles__OrderStyles-sc-1jlrbgn-3 fdmfdY"
             >
               <Link
                 href="/orders/ord123"
@@ -305,7 +305,7 @@ Array [
                   <span
                     className="order__info dateValOrders"
                   >
-                    7 days
+                    9 days
                      ago
                   </span>
                   <span
@@ -334,7 +334,7 @@ Array [
       primary={true}
     >
       <button
-        className="Button-sc-1hbypwi-0 styles__OrderButton-sc-1jlrbgn-4 ffEmAk"
+        className="Button-sc-1hbypwi-0 styles__OrderButton-sc-1jlrbgn-4 kPSbpN"
       >
         <Link
           href="/products"

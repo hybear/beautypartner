@@ -76,9 +76,7 @@
     "typescript": "^3.7.5"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "npm run snyk"
-    }
+    "hooks": {}
   },
   "prettier": {
     "singleQuote": true,
@@ -158,11 +156,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -196,11 +192,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -241,11 +235,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -265,11 +257,9 @@
         "inline-react-svg",
         {
           "svgo": {
-            "plugins": [
-              {
-                "cleanupIDs": false
-              }
-            ]
+            "plugins": [{
+              "cleanupIDs": false
+            }]
           }
         }
       ]

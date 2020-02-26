@@ -17,7 +17,7 @@ const TOGGLE_POPUP_MUTATION = gql`
 
 const PopUpStyles = styled.span`
   /* width: 300px; */
-  padding: 15px 40px 15px 25px;
+  padding: 15px 50px 15px 25px;
   font-size: 1em;
   border-radius: 0.2em;
   background-image: linear-gradient(135deg, #ff6fd8 10%, #3813c2 100%);
@@ -52,7 +52,7 @@ export const CloseButton = styled.span`
   border: 0;
   position: absolute;
   z-index: 2;
-  right: 10px;
+  right: 0;
   top: 50%;
   padding: 10px;
   transform: translateY(-50%);

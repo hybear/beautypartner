@@ -14,7 +14,7 @@ export const Drawer = styled.div`
     'avatar' 20%
     'balance' 8%
     'list' auto
-    'signout' 5%
+    'signout' auto
     / 100%;
   grid-row-gap: 1em;
   background: #fafafa;
@@ -67,7 +67,7 @@ export const AvatarContainer = styled.div`
       svg {
         width: 100%;
         height: initial;
-        max-height: 100px;
+        max-height: 130px;
         position: relative;
         ${({ theme }) => theme.media.tablet`
           max-height: 150px;
@@ -294,6 +294,7 @@ export const SignOutContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  align-self: end;
   ${({ theme }) => theme.media.tablet`
      position: absolute;
      bottom: 0;

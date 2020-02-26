@@ -32,5 +32,5 @@ export const Title = styled(GTitle)`
   font-size: 1.875em;
   font-family: 'QuadraSans-Bold';
   color: ${({ theme }) => theme.color.grey};
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;

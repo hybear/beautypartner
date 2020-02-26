@@ -23,6 +23,7 @@ import BadgeFocus from '../../../../public/assets/icon/Badge-Focus.svg';
 // UI
 import {
   VIPContainer,
+  VIPtext,
   BadgesList,
   Badge,
   ProfileContainer,
@@ -42,18 +43,78 @@ import Checked from '../../../General/Animations/Checked';
 
 const ProfileContent = props => {
   const Badges = {
-    BeautyPartner: <BadgeBeautyPartner />,
-    BadgeExplorer: <BadgeExplorer />,
-    BadgeFirstOrder: <BadgeFirstOrder />,
-    BadgePopStar: <BadgePopStar />,
-    BadgeProspecter: <BadgeProspecter />,
-    BadgePlayerOne: <BadgePlayerOne />,
-    BadgeGlobalSeller: <BadgeGlobalSeller />,
-    BadgeDiamond: <BadgeDiamond />,
-    BadgeSeasonLeader: <BadgeSeasonLeader />,
-    BadgeInfluencer: <BadgeInfluencer />,
-    BadgeRisingStar: <BadgeRisingStar />,
-    BadgeFocus: <BadgeFocus />,
+    BeautyPartner: {
+      El: <BadgeBeautyPartner />,
+      Title: 'Beauty Partner',
+      Benefit: 'Cashback: 5%',
+      Require: 'Be a Partner',
+    },
+    BadgeExplorer: {
+      El: <BadgeExplorer />,
+      Title: 'Explorer',
+      Benefit: '5 Products',
+      Require: 'Get Star Product',
+    },
+    BadgeFirstOrder: {
+      El: <BadgeFirstOrder />,
+      Title: 'First Order',
+      Benefit: '+$10 Credits',
+      Require: 'First Order',
+    },
+    BadgePopStar: {
+      El: <BadgePopStar />,
+      Title: 'Pop Star',
+      Benefit: 'Special Gift',
+      Require: '3 Weeks on Top',
+    },
+    BadgeProspecter: {
+      El: <BadgeProspecter />,
+      Title: 'Pop Star',
+      Benefit: 'Free Shipping',
+      Require: '20 Orders',
+    },
+    BadgePlayerOne: {
+      El: <BadgePlayerOne />,
+      Title: 'Player One',
+      Benefit: 'Receive First',
+      Require: 'First Leader',
+    },
+    BadgeGlobalSeller: {
+      El: <BadgeGlobalSeller />,
+      Title: 'Global Seller',
+      Benefit: '+$50 Credits',
+      Require: 'Orders in 5 Countries',
+    },
+    BadgeDiamond: {
+      El: <BadgeDiamond />,
+      Title: 'Diamond',
+      Benefit: 'Cashback: 20%',
+      Require: '$1.000.000 in orders',
+    },
+    BadgeSeasonLeader: {
+      El: <BadgeSeasonLeader />,
+      Title: 'Season Leader',
+      Benefit: 'Cashback: 15%',
+      Require: '1° in the season',
+    },
+    BadgeInfluencer: {
+      El: <BadgeInfluencer />,
+      Title: 'Influencer',
+      Benefit: '+$500 Credits',
+      Require: '60 Orders',
+    },
+    BadgeRisingStar: {
+      El: <BadgeRisingStar />,
+      Title: 'Rising Star',
+      Benefit: 'Cashback: 10%',
+      Require: '$100.000 in orders',
+    },
+    BadgeFocus: {
+      El: <BadgeFocus />,
+      Title: 'Focus',
+      Benefit: '+$30 Credits',
+      Require: '7 orders in a week',
+    },
   };
 
   // const getBadge = Badge => {
@@ -126,12 +187,22 @@ const ProfileContent = props => {
     <>
       <VIPContainer>
         <Title>VIP Center</Title>
+        <VIPtext>
+          <b>The more you sell, the more you gain.</b> Earn badges and status by selling our products, in each season
+          the first three partners will get amazing prizes.
+        </VIPtext>
         <BadgesList>
-          {Object.entries(Badges).map((Bad, i) => (
-            <Badge className={`badgeList__badge`} key={i}>
-              {Bad[1]}
-            </Badge>
-          ))}
+          {Object.entries(Badges).map((Bad, i) => {
+            let ownsBadge = User.info.badges.includes(Bad[1].Title.replace(' ', ''));
+            return (
+              <Badge className={`badgeList__badge`} ownsBadge={ownsBadge} key={i}>
+                <p className="badge__title">{Bad[1].Title}</p>
+                {Bad[1].El}
+                {!ownsBadge && <small className="badge__require">{Bad[1].Require}</small>}
+                {ownsBadge && <small className="badge__benefit">{Bad[1].Benefit}</small>}
+              </Badge>
+            );
+          })}
         </BadgesList>
       </VIPContainer>
       <ProfileContainer>

@@ -10,6 +10,7 @@ export const ProfileContainer = styled.div`
     'profile password' auto
     / 60% 1fr;
   grid-gap: 0 20px;
+  margin-top: 40px;
   ${({ theme }) => theme.media.tablet`
     grid-template:
       'title' auto
@@ -23,12 +24,22 @@ export const ProfileContainer = styled.div`
 
 export const VIPContainer = styled.div``;
 
+export const VIPtext = styled.p`
+  color: ${({ theme }) => theme.color.grey};
+  line-height: 1.5em;
+  b {
+    display: block;
+    font-family: 'QuadraSans-Bold';
+  }
+  margin-bottom: 20px;
+`;
+
 export const BadgesList = styled.ul`
   display: grid;
   grid-template-columns: repeat(6, calc(100% / 6));
   grid-auto-rows: min-content;
-  grid-gap: 5px;
-  width: 60%;
+  grid-gap: 10px;
+  width: 90%;
   ${({ theme }) => theme.media.tablet`
     width: 100%;
     grid-template-columns: repeat(4,minmax(calc(100% / 4), 100%));
@@ -39,10 +50,41 @@ export const BadgesList = styled.ul`
 
 export const Badge = styled.li`
   display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  text-align: center;
+  color: ${({ ownsBadge, theme }) => (ownsBadge ? theme.color.primary : theme.color.grey)};
+  .badge {
+    &__title {
+      font-size: 1em;
+      font-family: 'QuadraSans-Bold', sans-serif;
+      color: inherit;
+      margin-bottom: 5px;
+      ${({ theme }) => theme.media.tablet`
+        font-size: .8em;
+      `}
+    }
+    &__benefit {
+      font-size: 0.875em;
+      color: inherit;
+      margin-top: 5px;
+    }
+    &__require {
+      font-size: 0.875em;
+      color: inherit;
+      margin-top: 5px;
+    }
+  }
   svg {
     width: 100%;
     height: initial;
-    filter: grayscale(1);
+
+    rect {
+      fill: ${({ ownsBadge, theme }) => !ownsBadge && theme.color.lightGrey};
+    }
+    path {
+      fill: ${({ ownsBadge, theme }) => !ownsBadge && theme.color.grey};
+    }
   }
 `;
 
