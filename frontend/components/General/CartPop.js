@@ -19,6 +19,13 @@ const Cart = styled.span`
   box-shadow: 0px 0px 5px 0px rgba(244, 123, 81, 0.55), 0px 4px 5px 0px rgba(0, 0, 0, 0.1),
     0px 0px 10px 0px rgba(244, 123, 81, 0.7);
   transition: all 0.1s;
+
+  ${({ theme }) => theme.media.tablet`
+    background: linear-gradient(145deg, #ff8457, #dd6f49);
+    box-shadow:  5px 5px 10px #da6d48, 
+                -5px -5px 10px #ff895a;
+  `}
+
   svg {
     width: 80%;
     path {

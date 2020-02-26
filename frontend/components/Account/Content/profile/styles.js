@@ -21,6 +21,31 @@ export const ProfileContainer = styled.div`
   `}
 `;
 
+export const VIPContainer = styled.div``;
+
+export const BadgesList = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(6, calc(100% / 6));
+  grid-auto-rows: min-content;
+  grid-gap: 5px;
+  width: 60%;
+  ${({ theme }) => theme.media.tablet`
+    width: 100%;
+    grid-template-columns: repeat(4,minmax(calc(100% / 4), 100%));
+    grid-gap: 5px;
+    justify-content: center;
+  `}
+`;
+
+export const Badge = styled.li`
+  display: flex;
+  svg {
+    width: 100%;
+    height: initial;
+    filter: grayscale(1);
+  }
+`;
+
 export const Profile = styled.div`
   background: ${({ theme }) => theme.color.lightGrey};
   border-radius: 0.2rem;
@@ -78,6 +103,7 @@ export const PasswordContainer = styled.div`
   > p {
     font-family: 'QuadraSans-Bold';
     font-size: 1.2em;
+    margin-bottom: 10px;
   }
 `;
 

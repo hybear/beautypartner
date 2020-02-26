@@ -11,6 +11,7 @@ const CURRENT_USER_QUERY = gql`
       name
       birthday
       badges
+      avatar
       cart {
         id
         quantity

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Title as GTitle } from '../../General';
 
 export const Content = styled.div`
   grid-area: cont;
@@ -22,12 +23,13 @@ export const Content = styled.div`
   }
 
   ${({ theme }) => theme.media.tablet`
-      margin: 40px 0 80px;
+      margin: 20px 0 80px;
   `}
 `;
 
-export const Title = styled.h2`
-  font-size: 2em;
+export const Title = styled(GTitle)`
+  text-align: initial;
+  font-size: 1.875em;
   font-family: 'QuadraSans-Bold';
   color: ${({ theme }) => theme.color.grey};
   margin-bottom: 20px;

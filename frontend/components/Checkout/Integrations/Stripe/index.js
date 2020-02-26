@@ -43,8 +43,7 @@ const StripeButton = props => {
       alert(err.message);
     });
     Router.push({
-      pathname: '/orders',
-      query: { id: order.data.createOrder.id },
+      pathname: `/orders/${order.data.createOrder.id}`,
     });
   };
 

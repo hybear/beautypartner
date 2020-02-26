@@ -51,28 +51,28 @@ export const OrderStyles = styled.li`
     .order__title {
       font-family: 'QuadraSans-Bold', sans-serif;
       margin-bottom: 10px;
-      &.id {
-        grid-area: id;
-      }
-      &.status {
-        grid-area: status;
-      }
-      &.date {
-        grid-area: date;
-      }
-      &.total {
-        grid-area: total;
-      }
-      &.cashback {
-        grid-area: cashback;
-      }
       ${({ theme }) => theme.media.tablet`
+          &.idOrders {
+            grid-area: idOrders;
+          }
+          &.statusOrders {
+            grid-area: statusOrders;
+          }
+          &.dateOrders {
+            grid-area: dateOrders;
+          }
+          &.totalOrders {
+            grid-area: totalOrders;
+          }
+          &.cashbackOrders {
+            grid-area: cashbackOrders;
+          }
         margin-bottom: 0;
       `}
     }
 
     .order__info {
-      &.cashback {
+      &.cashbackValOrders {
         small {
           display: block;
           background: ${({ theme }) => theme.color.primary};
@@ -81,21 +81,23 @@ export const OrderStyles = styled.li`
           border-radius: 2px;
         }
       }
-      &.idVal {
-        grid-area: idVal;
-      }
-      &.statusVal {
-        grid-area: statusVal;
-      }
-      &.dateVal {
-        grid-area: dateVal;
-      }
-      &.totalVal {
-        grid-area: totalVal;
-      }
-      &.cashbackVal {
-        grid-area: cashbackVal;
-      }
+      ${({ theme }) => theme.media.tablet`
+          &.idValOrders {
+            grid-area: idValOrders;
+          }
+          &.statusValOrders {
+            grid-area: statusValOrders;
+          }
+          &.dateValOrders {
+            grid-area: dateValOrders;
+          }
+          &.totalValOrders {
+            grid-area: totalValOrders;
+          }
+          &.cashbackValOrders {
+            grid-area: cashbackValOrders;
+          }
+      `}
     }
   }
 `;

@@ -4,36 +4,32 @@ SSR Aplication on top of the Next 9 features
 
 ## Frontend
 
-.._ React
-.._ NextJs
-.._ Typescript
-.._ TSLint
-.._ Prettier
-.._ Three.js WebgL
-
-<!-- ..* Apollo Client -->
-
-.._ Styled Components
-.._ Jest
-.._ Enzyme
+..* React
+..* NextJs
+..* Prettier
+..* Three.js WebgL
+..* Apollo Client
+..* Styled Components
+..* Jest
+..* Enzyme
 
 ## Backend
 
-<!-- ..* MySQL
+..* MySQL
 ..* Prisma
 ..* GraphQL
 ..* Cloudinary
 ..* JWT Auth
 ..* Yoga Server
-..* Stripe Integration -->
+..* Stripe Integration
 
 ## CI/CD
 
-<!-- ..* Circle CI -->
-
-.._ Husky
-.._ Snyk
+..* Circle CI
+..* Husky
+..* Snyk
 
 ## Todo
-.._ Deploy Backend AWS Apex Up Prisma GraphQL
-.._ Deploy Frontend Serverless Lambda S3 w/ Cloud Formation
+
+..* Deploy Backend AWS Apex Up Prisma GraphQL
+..* Deploy Frontend Serverless Lambda S3 w/ Cloud Formation

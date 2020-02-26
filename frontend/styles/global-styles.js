@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
       font-style: normal;
   }
   html{
-      font-size: 1vw;
+    font-size: 1.175vw;
   }
   body{
     padding: 0;

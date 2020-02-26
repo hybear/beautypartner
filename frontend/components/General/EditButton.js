@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import { Button as GButton } from './Form';
 
 const EditButtonStyles = styled(GButton)`
-  width: 3em;
-  padding: 0.875em;
+  width: 2.5em;
+  height: 2.5em;
+  padding: 0.5em;
   margin: 0;
-  border-radius: 3em;
+  border-radius: 2.5em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,8 +17,8 @@ const EditButtonStyles = styled(GButton)`
   right: -10px;
 
   svg {
-    width: 1.25em;
-    height: 1.25em;
+    width: 1em;
+    height: 1em;
   }
 `;
 
