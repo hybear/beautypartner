@@ -6,7 +6,8 @@ import { LOCAL_STATE_QUERY as POPUP_STATE_QUERY } from '../components/General/Po
 
 function createClient({ headers }) {
   return new ApolloClient({
-    uri: process.env.NODE_ENV === 'development' ? endpoint : prodEndpoint,
+    // uri: process.env.NODE_ENV === 'development' ? endpoint : prodEndpoint,
+    uri: prodEndpoint,
     request: operation => {
       operation.setContext({
         fetchOptions: {

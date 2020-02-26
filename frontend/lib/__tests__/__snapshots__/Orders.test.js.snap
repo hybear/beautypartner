@@ -11,7 +11,7 @@ Array [
     >
       <styles__Title>
         <h2
-          className="Title-qmiaj1-0 styles__Title-sc-1ht2lvb-1 bSEGnV"
+          className="Title-qmiaj1-0 styles__Title-sc-1ht2lvb-1 kjYrfC"
         >
           Orders
         </h2>
@@ -132,7 +132,7 @@ Array [
                     <span
                       className="order__info dateValOrders"
                     >
-                      9 days
+                      10 days
                        ago
                     </span>
                     <span
@@ -184,7 +184,7 @@ Array [
   >
     <styles__Title>
       <h2
-        className="Title-qmiaj1-0 styles__Title-sc-1ht2lvb-1 bSEGnV"
+        className="Title-qmiaj1-0 styles__Title-sc-1ht2lvb-1 kjYrfC"
       >
         Orders
       </h2>
@@ -305,7 +305,7 @@ Array [
                   <span
                     className="order__info dateValOrders"
                   >
-                    9 days
+                    10 days
                      ago
                   </span>
                   <span

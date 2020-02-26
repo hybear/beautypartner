@@ -11,7 +11,7 @@ Array [
     >
       <styles__OrderTitle>
         <h2
-          className="Title-qmiaj1-0 styles__Title-sc-1ht2lvb-1 styles__OrderTitle-n7vcma-2 kAhZiM"
+          className="Title-qmiaj1-0 styles__Title-sc-1ht2lvb-1 styles__OrderTitle-n7vcma-2 pjoeL"
         >
           Order: 
           ord123
@@ -49,7 +49,7 @@ Array [
           <span
             className="content dateVal"
           >
-            9 days
+            10 days
              ago
           </span>
           <span
@@ -152,7 +152,7 @@ Array [
   >
     <styles__OrderTitle>
       <h2
-        className="Title-qmiaj1-0 styles__Title-sc-1ht2lvb-1 styles__OrderTitle-n7vcma-2 kAhZiM"
+        className="Title-qmiaj1-0 styles__Title-sc-1ht2lvb-1 styles__OrderTitle-n7vcma-2 pjoeL"
       >
         Order: 
         ord123
@@ -190,7 +190,7 @@ Array [
         <span
           className="content dateVal"
         >
-          9 days
+          10 days
            ago
         </span>
         <span

@@ -3,6 +3,7 @@ import React from 'react';
 import { ApolloProvider } from 'react-apollo';
 import withData from '../lib/withData';
 import Page from '@components/Page';
+// import BackgroundInteractive from '@components/General/BackgroundInteractive';
 
 class Index extends App {
   static async getInitialProps({ Component, ctx }) {

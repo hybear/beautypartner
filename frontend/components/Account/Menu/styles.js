@@ -12,7 +12,7 @@ export const Drawer = styled.div`
   display: grid;
   grid-template:
     'avatar' 20%
-    'balance' 8%
+    'balance' minmax(auto, 60px)
     'list' auto
     'signout' auto
     / 100%;

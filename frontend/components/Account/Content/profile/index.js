@@ -140,6 +140,12 @@ const ProfileContent = props => {
   //   };
 
   const handleInput = (state, handleState) => {
+    setProfile({
+      name: User.info.name,
+      document: User.info.document,
+      phone: User.info.phone,
+      birthday: User.info.birthday,
+    });
     handleState(!state);
   };
 
@@ -185,26 +191,6 @@ const ProfileContent = props => {
 
   return (
     <>
-      <VIPContainer>
-        <Title>VIP Center</Title>
-        <VIPtext>
-          <b>The more you sell, the more you gain.</b> Earn badges and status by selling our products, in each season
-          the first three partners will get amazing prizes.
-        </VIPtext>
-        <BadgesList>
-          {Object.entries(Badges).map((Bad, i) => {
-            let ownsBadge = User.info.badges.includes(Bad[1].Title.replace(' ', ''));
-            return (
-              <Badge className={`badgeList__badge`} ownsBadge={ownsBadge} key={i}>
-                <p className="badge__title">{Bad[1].Title}</p>
-                {Bad[1].El}
-                {!ownsBadge && <small className="badge__require">{Bad[1].Require}</small>}
-                {ownsBadge && <small className="badge__benefit">{Bad[1].Benefit}</small>}
-              </Badge>
-            );
-          })}
-        </BadgesList>
-      </VIPContainer>
       <ProfileContainer>
         <Title>Account Info</Title>
         <Profile handleProfile={handleProfile}>
@@ -252,15 +238,14 @@ const ProfileContent = props => {
                 >
                   <div className="form__container">
                     <div className="form__grid">
-                      <Label htmlFor="fullname">Full Name*</Label>
+                      <Label htmlFor="name">Full Name*</Label>
                       <Input
-                        name="fullname"
+                        name="name"
                         type="text"
                         required
                         placeholder="Ex: Lydia Hallie"
                         checked={/(\w.+\s).+/.test(profile.name) && true}
                         value={profile.name}
-                        defaultValue={User.info.name}
                         onChange={e => handleChange(e)}
                       />
                       {/^\w+$/.test(profile.name) && <Info>Please check if you type your full name</Info>}
@@ -279,7 +264,6 @@ const ProfileContent = props => {
                         placeholder="Ex: lydia.hallie@email.com"
                         // checked={/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(profile.email) && true}
                         value={profile.email}
-                        defaultValue={User.info.email}
                         disabled
                         // onChange={e => handleChange(e)}
                       />
@@ -308,8 +292,7 @@ const ProfileContent = props => {
                         name="birthday"
                         type="date"
                         // checked={}
-                        value={profile.birthday.substring(0, 10)}
-                        defaultValue={User.info.birthday.substring(0, 10)}
+                        value={profile.birthday != null ? profile.birthday.substring(0, 10) : profile.birthday}
                         onChange={e => handleChange(e)}
                         placeholder="MM/DD/YYYY"
                       />
@@ -323,12 +306,7 @@ const ProfileContent = props => {
 
                     <div className="form__grid">
                       <Label htmlFor="document">CPF*</Label>
-                      <InputMask
-                        mask="999.999.999-99"
-                        value={profile.document}
-                        defaultValue={User.info.document}
-                        onChange={e => handleChange(e)}
-                      >
+                      <InputMask mask="999.999.999-99" value={profile.document} onChange={e => handleChange(e)}>
                         {() => (
                           <Input
                             name="document"
@@ -354,12 +332,7 @@ const ProfileContent = props => {
 
                     <div className="form__grid">
                       <Label htmlFor="phone">Phone</Label>
-                      <InputMask
-                        mask="(00) 0000-0000"
-                        value={profile.phone}
-                        defaultValue={User.info.phone}
-                        onChange={e => handleChange(e)}
-                      >
+                      <InputMask mask="(00) 0000-0000" value={profile.phone} onChange={e => handleChange(e)}>
                         {() => (
                           <Input
                             name="phone"
@@ -430,6 +403,26 @@ const ProfileContent = props => {
           )}
         </PasswordContainer>
       </ProfileContainer>
+      <VIPContainer>
+        <Title>VIP Center</Title>
+        <VIPtext>
+          <b>The more you sell, the more you gain.</b> Earn badges and status by selling our products, in each season
+          the first three partners will get amazing prizes.
+        </VIPtext>
+        <BadgesList>
+          {Object.entries(Badges).map((Bad, i) => {
+            let ownsBadge = User.info.badges.includes(Bad[1].Title.replace(' ', ''));
+            return (
+              <Badge className={`badgeList__badge`} ownsBadge={ownsBadge} key={i}>
+                <p className="badge__title">{Bad[1].Title}</p>
+                {Bad[1].El}
+                {!ownsBadge && <small className="badge__require">{Bad[1].Require}</small>}
+                {ownsBadge && <small className="badge__benefit">{Bad[1].Benefit}</small>}
+              </Badge>
+            );
+          })}
+        </BadgesList>
+      </VIPContainer>
     </>
   );
 };

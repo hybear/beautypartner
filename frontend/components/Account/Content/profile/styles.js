@@ -2,27 +2,9 @@ import styled from 'styled-components';
 import { Text } from '../../../General';
 import { Button as GButton } from '../../../General/Form';
 
-export const ProfileContainer = styled.div`
-  align-items: start;
-  display: grid;
-  grid-template:
-    'title title' auto
-    'profile password' auto
-    / 60% 1fr;
-  grid-gap: 0 20px;
-  margin-top: 40px;
-  ${({ theme }) => theme.media.tablet`
-    grid-template:
-      'title' auto
-      'profile' auto
-      'password' auto
-      / 100%;
-      grid-gap: 20px;
-      margin-bottom: 20px;
-  `}
+export const VIPContainer = styled.div`
+  margin: 40px 0 60px;
 `;
-
-export const VIPContainer = styled.div``;
 
 export const VIPtext = styled.p`
   color: ${({ theme }) => theme.color.grey};
@@ -36,10 +18,9 @@ export const VIPtext = styled.p`
 
 export const BadgesList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(6, calc(100% / 6));
+  grid-template-columns: repeat(6, minmax(calc(100% / 12), 100px));
   grid-auto-rows: min-content;
   grid-gap: 10px;
-  width: 90%;
   ${({ theme }) => theme.media.tablet`
     width: 100%;
     grid-template-columns: repeat(4,minmax(calc(100% / 4), 100%));
@@ -54,9 +35,10 @@ export const Badge = styled.li`
   justify-content: flex-start;
   text-align: center;
   color: ${({ ownsBadge, theme }) => (ownsBadge ? theme.color.primary : theme.color.grey)};
+  width: 100%;
   .badge {
     &__title {
-      font-size: 1em;
+      font-size: 0.875em;
       font-family: 'QuadraSans-Bold', sans-serif;
       color: inherit;
       margin-bottom: 5px;
@@ -65,14 +47,20 @@ export const Badge = styled.li`
       `}
     }
     &__benefit {
-      font-size: 0.875em;
+      font-size: 0.8em;
       color: inherit;
       margin-top: 5px;
+      ${({ theme }) => theme.media.tablet`
+        font-size: .8em;
+      `}
     }
     &__require {
-      font-size: 0.875em;
+      font-size: 0.8em;
       color: inherit;
       margin-top: 5px;
+      ${({ theme }) => theme.media.tablet`
+        font-size: .8em;
+      `}
     }
   }
   svg {
@@ -86,6 +74,25 @@ export const Badge = styled.li`
       fill: ${({ ownsBadge, theme }) => !ownsBadge && theme.color.grey};
     }
   }
+`;
+
+export const ProfileContainer = styled.div`
+  align-items: start;
+  display: grid;
+  grid-template:
+    'title title' auto
+    'profile password' auto
+    / 60% 1fr;
+  grid-gap: 0 20px;
+  ${({ theme }) => theme.media.tablet`
+    grid-template:
+      'title' auto
+      'profile' auto
+      'password' auto
+      / 100%;
+      grid-gap: 20px;
+      margin-bottom: 20px;
+  `}
 `;
 
 export const Profile = styled.div`
