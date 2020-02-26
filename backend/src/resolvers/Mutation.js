@@ -113,6 +113,8 @@ const Mutations = {
 
     const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET);
 
+    console.log(token);
+
     if (remember) {
       ctx.response.cookie("token", token, {
         httpOnly: true,
@@ -124,6 +126,8 @@ const Mutations = {
         maxAge: 1000 * 60 * 30
       });
     }
+
+    console.log(user);
 
     return user;
   },
@@ -365,12 +369,12 @@ const Mutations = {
                 }
             }`
     );
-
-    const cashbackPercent = user.badges.reduce(badge => {
-      if (badge == "Diamond") return 20; // 20
-      if (badge == "SeasonLeader") return 15; // 15
-      if (badge == "RisingStar") return 10; // 10
-      if (badge == "BeautyPartner") return 5; // 5
+    let cashbackPercent = 5;
+    user.badges.reduce(badge => {
+      if (badge == "Diamond") return cashbackPercent = 20; // 20
+      if (badge == "SeasonLeader") return cashbackPercent = 15; // 15
+      if (badge == "RisingStar") return cashbackPercent = 10; // 10
+      if (badge == "BeautyPartner") return cashbackPercent = 5; // 5
       ctx.db.mutation.updateUser({
         where: { id: userId },
         data: {
@@ -379,10 +383,10 @@ const Mutations = {
           }
         }
       });
-      return 5
+      return cashbackPercent = 5;
     });
 
-    console.log(cashbackPercent);
+    console.log("cashbackpercent total " + cashbackPercent);
     let total = user.cart.reduce(
       (tally, cartItem) => tally + cartItem.item.bestPrice * cartItem.quantity,
       0
