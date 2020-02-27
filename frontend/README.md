@@ -32,4 +32,4 @@ The continuous integration flow is linked to my GitHub through **Circle CI**, an
 
 
 #### Deploy
-The Backend is now in an instance on AWS ([Link for Playground](https://cgsy71zgc1.execute-api.eu-west-1.amazonaws.com/staging/)) and for Frontend I'm uploading a Serverless instance to use the best SSR and Lambda resources.
+The Backend is now in a scalable instance on AWS ([Link for Playground](https://cgsy71zgc1.execute-api.eu-west-1.amazonaws.com/staging/)) and for Frontend I'm uploading a Serverless instance to use the best SSR and Lambda resources.
