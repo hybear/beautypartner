@@ -2,7 +2,7 @@ About Beauty Partner
 ==============================
 
 ## The Project
-This is a project that is part of a test to work at Grupo Boticário.
+This is a project that is part of a test to work at Boticario Group
 
 #### Overview
 The challenge was to develop an application to register new partners, and create a dashboard to group information of the orders placed and the cashback of each purchase.  
