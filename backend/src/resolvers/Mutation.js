@@ -391,10 +391,11 @@ const Mutations = {
       (tally, cartItem) => tally + cartItem.item.bestPrice * cartItem.quantity,
       0
     );
-    // console.log(total);
-    const amount = total - ((total * cashbackPercent) / 100);
 
-    // console.log(amount);
+    total = parseFloat(total / 100).toFixed(2);
+
+    console.log("Total: " + total);
+    const amount = total - ((total * cashbackPercent) / 100);
 
     console.log(`Going to charge for a total of ${amount}`);
 
@@ -405,6 +406,55 @@ const Mutations = {
           } 
       }
     }, info)
+    
+    // Badges
+    const firstOrder = user.badges.some(badge => 
+      badge == "FirstOrder"
+    );
+
+    const Prospecter =  user.badges.some(badge => 
+      badge == "Prospecter" && orders.length >= 20
+    );
+
+    const Influencer = user.badges.some(badge => 
+      badge == "Influencer" && orders.length >= 60
+    );
+
+
+    if(!firstOrder){
+      ctx.db.mutation.updateUser({
+        where: { id: userId },
+        data: {
+          badges: {
+            set: [...user.badges, "FirstOrder"],
+          }
+        }
+      });
+    }
+    
+    if(Prospecter){
+      console.log(orders.length)
+      ctx.db.mutation.updateUser({
+        where: { id: userId },
+        data: {
+          badges: {
+            set: [...user.badges, "Prospecter"]
+          }
+        }
+      });
+    }
+
+    if(Influencer){
+      console.log(orders.length)
+      ctx.db.mutation.updateUser({
+        where: { id: userId },
+        data: {
+          badges: {
+            set: [...user.badges, "Influencer"]
+          }
+        }
+      });
+    }
 
     // Convert CartItems to OrderItems
     const orderItems = user.cart.map(cartItem => {
@@ -443,7 +493,7 @@ const Mutations = {
     
     if (args.paymentMethod == "stripe") {
       const charge = await stripe.charges.create({
-        amount: stripeAmount,
+        amount: parseInt(stripeAmount),
         currency: "USD",
         source: args.token
       });
@@ -459,58 +509,9 @@ const Mutations = {
       const updateBalance = await ctx.db.mutation.updateUser({
         where: { id: userId },
         data: {
-          balance: user.balance + ((total * cashbackPercent) / 100)
+          balance: !firstOrder ? user.balance + ((total * cashbackPercent) / 100) + 10 : user.balance + ((total * cashbackPercent) / 100)
         }
       });
-    
-      // Badges
-      const firstOrder = await user.badges.some(badge => 
-        badge == "FirstOrder"
-      );
-
-      const Prospecter = await user.badges.some(badge => 
-        badge != "Prospecter" && orders.length >= 20
-      );
-
-      const Influencer = await user.badges.some(badge => 
-        badge != "Influencer" && orders.length >= 60
-      );
-
-
-      if(firstOrder){
-        ctx.db.mutation.updateUser({
-          where: { id: userId },
-          data: {
-            badges: {
-              set: [...user.badges, "FirstOrder"]
-            }
-          }
-        });
-      }
-      
-      if(Prospecter){
-        console.log(orders.length)
-        ctx.db.mutation.updateUser({
-          where: { id: userId },
-          data: {
-            badges: {
-              set: [...user.badges, "Prospecter"]
-            }
-          }
-        });
-      }
-
-      if(Influencer){
-        console.log(orders.length)
-        ctx.db.mutation.updateUser({
-          where: { id: userId },
-          data: {
-            badges: {
-              set: [...user.badges, "Influencer"]
-            }
-          }
-        });
-      }
 
       return chargeOrder;
 
