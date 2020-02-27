@@ -28,7 +28,7 @@ For Frontend I chose to develop a **React** application in **Next.js** with Serv
 The application root was created with **Node.js**, the database was used a **MySQL** instance of **Prisma** and to generate the **GraphQL** endpoint I used the **Yoga Server**, authentications are made via a cookie using **Token JWT** which can persist according to the user's wishes during login, and the images that are registered are sent to **Cloudinary** where has pre-defined tasks for handling and storing them, to close orders an integration with **Stripe** has been added.  
 
 #### CI/CD
-The continuous integration flow is linked to my GitHub through **Circle CI**, and **Snyk** to ensure security on the premises.  
+The continuous integration flow is linked to my GitHub through **Circle CI**, and **Snyk** to ensure security on npm dependencies.  
 
 
 #### Deploy
