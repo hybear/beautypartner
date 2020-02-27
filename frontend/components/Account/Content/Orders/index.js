@@ -57,7 +57,7 @@ const Order = order => (
         <span className="order__info idValOrders">{order.id}</span>
         <span className="order__info statusValOrders">{order.status}</span>
         <span className="order__info dateValOrders">{formatDistance(parseISO(order.createdAt), new Date())} ago</span>
-        <span className="order__info totalValOrders">{formatMoney(order.total)}</span>
+        <span className="order__info totalValOrders">${order.total.toFixed(2)}</span>
         <span className="order__info cashbackValOrders">
           +
           {formatMoney(

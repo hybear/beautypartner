@@ -1,11 +1,12 @@
 jobs:
   build:
     docker:
-      - image: 'circleci/node:4.8.2'
+      - image: 'circleci/node:latest'
     steps:
       - checkout
       - run: npm install -q
       - snyk/scan
+      - run: npm test
 orbs:
   snyk: snyk/snyk@x.y.z
 version: 2.1

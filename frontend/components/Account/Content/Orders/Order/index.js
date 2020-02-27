@@ -57,7 +57,7 @@ const Order = ({ id }) => {
                 <span className="title cashback">Cashback</span>
                 <span className="content statusVal">{order.status}</span>
                 <span className="content dateVal">{formatDistance(parseISO(order.createdAt), new Date())} ago</span>
-                <span className="content totalVal">{formatMoney(order.total)}</span>
+                <span className="content totalVal">${order.total.toFixed(2)}</span>
                 <span className="content cashbackVal">
                   +
                   {formatMoney(

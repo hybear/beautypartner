@@ -69,6 +69,9 @@ export const AddToCart = styled.div`
   margin: 10px 10px 15px;
   opacity: ${({ hover }) => (hover ? '1' : '0')};
   transition: all 0.2s;
+  ${({ theme }) => theme.media.tablet`
+    opacity: 1;
+  `}
 `;
 
 export const PriceTag = styled.span`

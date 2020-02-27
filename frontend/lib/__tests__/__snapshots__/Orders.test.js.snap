@@ -73,7 +73,7 @@ Array [
                 "APROVED",
               ]
             }
-            total={40000}
+            total={400}
             user={
               Object {
                 "__typename": "User",
@@ -132,13 +132,14 @@ Array [
                     <span
                       className="order__info dateValOrders"
                     >
-                      10 days
+                      11 days
                        ago
                     </span>
                     <span
                       className="order__info totalValOrders"
                     >
-                      $400
+                      $
+                      400.00
                     </span>
                     <span
                       className="order__info cashbackValOrders"
@@ -246,7 +247,7 @@ Array [
               "APROVED",
             ]
           }
-          total={40000}
+          total={400}
           user={
             Object {
               "__typename": "User",
@@ -305,13 +306,14 @@ Array [
                   <span
                     className="order__info dateValOrders"
                   >
-                    10 days
+                    11 days
                      ago
                   </span>
                   <span
                     className="order__info totalValOrders"
                   >
-                    $400
+                    $
+                    400.00
                   </span>
                   <span
                     className="order__info cashbackValOrders"

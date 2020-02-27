@@ -129,7 +129,7 @@ const Menu = props => {
       </AvatarContainer>
       <Balance>
         <small>Balance</small>
-        {User.info.balance != null ? formatMoney(User.info.balance) : '$0,00'}
+        {User.info.balance != null ? `$${User.info.balance.toFixed(2)}` : '$0,00'}
       </Balance>
       <List>
         <ListItem active={props.active == 'profile'}>

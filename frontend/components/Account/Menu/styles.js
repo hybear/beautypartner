@@ -56,7 +56,7 @@ export const AvatarContainer = styled.div`
         content: '';
         width: 90%;
         height: 50%;
-        border-radius: 0.2em;
+        border-radius: 0.2em 0.2em 0 0;
         background: ${({ theme }) => theme.color.white};
         position: absolute;
         display: block;

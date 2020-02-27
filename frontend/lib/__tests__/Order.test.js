@@ -35,8 +35,8 @@ describe('<Order/>', () => {
       await wait(0);
       wrapper.update();
 
-      expect(toJson(wrapper.find('.totalVal')).children[0]).toContain('$400');
-      expect(toJson(wrapper.find('.dateVal')).children[0]).toContain('7 days');
+      expect(toJson(wrapper.find('.totalVal')).children[1]).toContain('400.00');
+      expect(toJson(wrapper.find('.cashbackVal')).children[1]).toBe('$4.23');
     });
   });
 

@@ -49,13 +49,14 @@ Array [
           <span
             className="content dateVal"
           >
-            10 days
+            11 days
              ago
           </span>
           <span
             className="content totalVal"
           >
-            $400
+            $
+            400.00
           </span>
           <span
             className="content cashbackVal"
@@ -190,13 +191,14 @@ Array [
         <span
           className="content dateVal"
         >
-          10 days
+          11 days
            ago
         </span>
         <span
           className="content totalVal"
         >
-          $400
+          $
+          400.00
         </span>
         <span
           className="content cashbackVal"

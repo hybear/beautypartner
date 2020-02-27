@@ -46,7 +46,7 @@ const fakeOrder = () => ({
   __typename: 'Order',
   id: 'ord123',
   charge: 'ch_123',
-  total: 40000,
+  total: 400,
   cashback: 5,
   paymentMethod: 'stripe',
   items: [fakeOrderItem(), fakeOrderItem()],
