@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
+import Link from 'next/link';
 // import { Canvas, useFrame } from 'react-three-fiber'
 import {
   Content,
@@ -106,7 +107,7 @@ const About = () => {
         </div>
         <div className="content">
           <small className="content__sub">
-            <i>The Artisan</i> behind this
+            <i>The Artisan</i>
           </small>
           <h1 className="content__name">Patrick Castro</h1>
           <p className="content__shortinfo">
@@ -155,8 +156,11 @@ const About = () => {
       <AboutProject>
         <Title>About Beauty Partner</Title>
         <Text>
-          The concept was to create a easy way to a partners and sellers register their orders and track the status, the
-          solution
+          The challenge was to develop an application to register new partners, and create a dashboard to group
+          information of the orders placed and the cashback of each purchase.
+          <Link href="/">
+            <a> shop now</a>
+          </Link>
         </Text>
       </AboutProject>
       <div></div>
