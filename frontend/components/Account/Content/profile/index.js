@@ -362,7 +362,7 @@ const ProfileContent = () => {
           )}
         </Profile>
 
-        <PasswordContainer>
+        <PasswordContainer handlePassword={handlePassword}>
           {handlePassword == false ? (
             <>
               <EditButton primary onClick={() => handleInput(handlePassword, setHandlePassword)} />

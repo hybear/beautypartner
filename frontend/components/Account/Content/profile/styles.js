@@ -96,10 +96,11 @@ export const ProfileContainer = styled.div`
 `;
 
 export const Profile = styled.div`
-  background: ${({ theme }) => theme.color.lightGrey};
+  background: ${({ theme, handleProfile }) => (!handleProfile ? theme.color.lightGrey : theme.color.white)};
   border-radius: 0.2rem;
   color: ${({ theme }) => theme.color.grey};
-  box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: ${({ theme, handleProfile }) =>
+    !handleProfile ? 'inset 0px 1px 5px 0px rgba(0, 0, 0, 0.15)' : theme.misc.bs};
   display: grid;
   grid-area: profile;
   ${props => !props.handleProfile && `grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3), 1fr))`};
@@ -144,10 +145,11 @@ export const PasswordContainer = styled.div`
   max-width: 30rem;
   padding: 20px;
   /* margin: 10px 0; */
+  background: ${({ theme, handlePassword }) => (!handlePassword ? theme.color.lightGrey : theme.color.white)};
   border-radius: 0.2rem;
-  background: ${({ theme }) => theme.color.lightGrey};
-  box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
   color: ${({ theme }) => theme.color.grey};
+  box-shadow: ${({ theme, handlePassword }) =>
+    !handlePassword ? 'inset 0px 1px 5px 0px rgba(0, 0, 0, 0.15)' : theme.misc.bs};
   position: relative;
   > p {
     font-family: 'QuadraSans-Bold';

@@ -81,7 +81,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "eslint --ignore-path .gitignore . --no-verify"
+      "pre-commit": "eslint --ignore-path .gitignore ."
     }
   },
   "prettier": {
@@ -162,11 +162,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -200,11 +198,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -245,11 +241,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -269,11 +263,9 @@
         "inline-react-svg",
         {
           "svgo": {
-            "plugins": [
-              {
-                "cleanupIDs": false
-              }
-            ]
+            "plugins": [{
+              "cleanupIDs": false
+            }]
           }
         }
       ]
