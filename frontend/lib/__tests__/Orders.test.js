@@ -3,11 +3,8 @@ import { MockedProvider } from '@apollo/react-testing';
 import { act } from 'react-dom/test-utils';
 import wait from 'waait';
 import { fakeOrder } from '../testUtils';
-import { ThemeProvider } from 'styled-components';
-import theme from '../../styles/theme';
 import toJson from 'enzyme-to-json';
-
-export const ThemeProviderWrapper = ({ children }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+import { ThemeProviderWrapper } from '../../styles/theme';
 
 const mocks = [
   {

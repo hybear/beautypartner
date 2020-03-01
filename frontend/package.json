@@ -4,7 +4,7 @@
   "description": "Small test to work in Boticario Group",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
     "start": "next start",
     "test": "SET NODE_ENV=test&& jest --watch",
@@ -156,11 +156,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -194,11 +192,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -239,11 +235,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -263,11 +257,9 @@
         "inline-react-svg",
         {
           "svgo": {
-            "plugins": [
-              {
-                "cleanupIDs": false
-              }
-            ]
+            "plugins": [{
+              "cleanupIDs": false
+            }]
           }
         }
       ]

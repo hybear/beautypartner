@@ -11,67 +11,86 @@ const REQUEST_RESET_MUTATION = gql`
   }
 `;
 
-const RequestReset = () => {
-  const classes = useStyles();
-  const [email, setEmail] = useState('');
+// UI
+import { Input, Label, Info, Checkbox } from '../../General/Form';
+import { RequestResetContainer, BGImage, FormContainer, Form, Text, Logo, Error, Button } from './styles';
 
-  const User = {
-    email: email,
-  };
+// ANIMATIONS
+import Checked from '../../General/Animations/Checked';
+
+// ICONS
+
+const RequestReset = () => {
+  const [User, setUser] = useState({
+    email: '',
+  });
 
   return (
-    <div></div>
-    // <Grid container component="main" className={classes.root}>
-    //   <Grid item xs={false} sm={4} md={7} className={classes.image} />
-    //   <Grid item xs={12} sm={8} md={5} component={Paper} elevation={0} square>
-    //     <div className={classes.paper}>
-    //       <Avatar className={classes.avatar}>
-    //         <LockOutlinedIcon />
-    //       </Avatar>
-    //       <Typography component="h1" variant="h5">
-    //         Request New Password
-    //       </Typography>
-    //       <Mutation mutation={REQUEST_RESET_MUTATION} variables={User}>
-    //         {(reset, { error, loading, called }) => (
-    //           <form
-    //             className={classes.form}
-    //             method="post"
-    //             data-test="form"
-    //             onSubmit={async e => {
-    //               e.preventDefault();
-    //               const res = await reset();
-    //               setEmail('');
-    //             }}
-    //           >
-    //             {!error && !loading && called && <p>Success! We send to your e-mail the next steps</p>}
-    //             <TextField
-    //               variant="outlined"
-    //               margin="normal"
-    //               required
-    //               fullWidth
-    //               id="email"
-    //               label="Email Address"
-    //               name="email"
-    //               autoComplete="email"
-    //               autoFocus
-    //               value={email}
-    //               data-test="email"
-    //               onChange={e => setEmail(e.target.value)}
-    //             />
-    //             <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-    //               Send Request
-    //             </Button>
-    //             <Grid container>
-    //               <Grid item>
-    //                 <Link href="/account/login">Remember your password? Sign In</Link>
-    //               </Grid>
-    //             </Grid>
-    //           </form>
-    //         )}
-    //       </Mutation>
-    //     </div>
-    //   </Grid>
-    // </Grid>
+    <RequestResetContainer>
+      <BGImage src="/assets/signinbg-min.jpg" alt="Beauty Partner Makes" />
+      <Mutation mutation={REQUEST_RESET_MUTATION} variables={User.email}>
+        {(requestReset, { error, loading }) => (
+          <FormContainer>
+            <Logo />
+            <Form
+              method="post"
+              data-test="form"
+              className="formReset"
+              onSubmit={async e => {
+                e.preventDefault();
+                console.log(User);
+                const res = await requestReset();
+                console.log(res);
+                setUser({ email: '' });
+              }}
+            >
+              <div className="form__container">
+                <div className="form__grid">
+                  <Label htmlFor="email">E-mail*</Label>
+                  <Input
+                    name="email"
+                    type="email"
+                    id="email"
+                    required
+                    placeholder="Ex: lydia.hallie@email.com"
+                    checked={/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(User.email) && true}
+                    value={User.email}
+                    tabindex="2"
+                    onChange={e => setUser({ ...User, email: e.target.value })}
+                  />
+                  {/^(?!$)+(?!\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)/.test(User.email) && (
+                    <Info>Check if your e-mail is valid</Info>
+                  )}
+                  {/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(User.email) && (
+                    <span className="set--ok">
+                      <Checked isStoped={false} />
+                    </span>
+                  )}
+                </div>
+              </div>
+              <Button
+                type="submit"
+                primary
+                fullWidth
+                disabled={
+                  loading ||
+                  /^(?!$)+(?!\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)/.test(User.email) ||
+                  /^(?!.*(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,}))/.test(User.password)
+                }
+              >
+                Reset{loading ? 'ing' : ''} Password
+              </Button>
+              <Text>
+                Remember your password?
+                <Link href="/signin">
+                  <a> Sign In</a>
+                </Link>
+              </Text>
+            </Form>
+          </FormContainer>
+        )}
+      </Mutation>
+    </RequestResetContainer>
   );
 };
 

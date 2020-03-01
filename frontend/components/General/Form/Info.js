@@ -4,7 +4,7 @@ const Info = styled.span`
   font-size: 0.875em;
   color: ${props => props.theme.color.error};
   margin-top: 5px;
-  display: block;
+  display: ${({ hidden }) => (hidden ? 'none' : 'block')};
   b {
     font-family: 'QuadraSans-Bold';
   }

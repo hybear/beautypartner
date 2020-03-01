@@ -27,6 +27,7 @@ const fakeUser = () => ({
   creditCards: [],
   phone: casual.phone,
   balance: 1800,
+  badges: ['BeautyPartner'],
   orders: [],
   cart: [],
 });

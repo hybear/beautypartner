@@ -1,9 +1,13 @@
 const withPlugins = require('next-compose-plugins');
-const withOffline = require('next-offline');
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
+const withOffline = require('next-offline')({
+  // generateInDevMode: true,
+  devSwSrc: './service-worker.js',
+});
+
 const nextConfig = {
   target: 'serverless',
   webpack: config => {
@@ -13,4 +17,5 @@ const nextConfig = {
     return config;
   },
 };
+
 module.exports = withPlugins([withBundleAnalyzer, withOffline], nextConfig);

@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignUp /> renders and matches snapshots 1`] = `
+<form
+  className="Form-omwzro-0 styles__Form-pihe1-1 idMdxA"
+  method="post"
+  onSubmit={[Function]}
+>
+  <div
+    className="form__container"
+  >
+    <div
+      className="form__grid"
+    >
+      <Label
+        htmlFor="fullname"
+      >
+        <label
+          className="Label-sc-2yv4fq-0 bFjpBR"
+          htmlFor="fullname"
+        >
+          Full Name*
+        </label>
+      </Label>
+      <Input
+        checked={false}
+        id="fullname"
+        name="fullname"
+        onChange={[Function]}
+        placeholder="Ex: Lydia Hallie"
+        required={true}
+        tabindex="1"
+        type="text"
+        value=""
+      >
+        <input
+          checked={false}
+          className="Input-sc-145vwqf-0 kWeKyo"
+          id="fullname"
+          name="fullname"
+          onChange={[Function]}
+          placeholder="Ex: Lydia Hallie"
+          required={true}
+          type="text"
+          value=""
+        />
+      </Input>
+    </div>
+    <div
+      className="form__grid"
+    >
+      <Label
+        htmlFor="email"
+      >
+        <label
+          className="Label-sc-2yv4fq-0 bFjpBR"
+          htmlFor="email"
+        >
+          E-mail*
+        </label>
+      </Label>
+      <Input
+        checked={false}
+        id="email"
+        name="email"
+        onChange={[Function]}
+        placeholder="Ex: lydia.hallie@email.com"
+        required={true}
+        tabindex="2"
+        type="email"
+        value=""
+      >
+        <input
+          checked={false}
+          className="Input-sc-145vwqf-0 kWeKyo"
+          id="email"
+          name="email"
+          onChange={[Function]}
+          placeholder="Ex: lydia.hallie@email.com"
+          required={true}
+          type="email"
+          value=""
+        />
+      </Input>
+    </div>
+    <div
+      className="form__grid"
+    >
+      <Label
+        htmlFor="document"
+      >
+        <label
+          className="Label-sc-2yv4fq-0 bFjpBR"
+          htmlFor="document"
+        >
+          CPF*
+        </label>
+      </Label>
+      <InputElement
+        mask="999.999.999-99"
+        onChange={[Function]}
+        value=""
+      >
+        <Input
+          checked={false}
+          id="document"
+          name="document"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          onPaste={[Function]}
+          placeholder="000.000.000-00"
+          required={true}
+          tabindex="3"
+          type="text"
+          value=""
+        >
+          <input
+            checked={false}
+            className="Input-sc-145vwqf-0 kWeKyo"
+            id="document"
+            name="document"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            onPaste={[Function]}
+            placeholder="000.000.000-00"
+            required={true}
+            type="text"
+            value=""
+          />
+        </Input>
+      </InputElement>
+    </div>
+    <div
+      className="form__grid"
+    >
+      <Label
+        htmlFor="password"
+      >
+        <label
+          className="Label-sc-2yv4fq-0 bFjpBR"
+          htmlFor="password"
+        >
+          Password*
+        </label>
+      </Label>
+      <Input
+        checked={false}
+        id="password"
+        name="password"
+        onChange={[Function]}
+        placeholder="*******"
+        required={true}
+        tabindex="4"
+        type="password"
+        value=""
+      >
+        <input
+          checked={false}
+          className="Input-sc-145vwqf-0 kWeKyo"
+          id="password"
+          name="password"
+          onChange={[Function]}
+          placeholder="*******"
+          required={true}
+          type="password"
+          value=""
+        />
+      </Input>
+      <Info
+        hidden={false}
+      >
+        <span
+          className="Info-sc-19b1ctt-0 etcRNQ"
+          hidden={false}
+        >
+          <ul>
+            <li>
+              Uppercase
+            </li>
+            <li>
+              Lowercase
+            </li>
+            <li>
+              Number
+            </li>
+            <li>
+              Special Char
+            </li>
+            <li>
+              Min 8 characters
+            </li>
+          </ul>
+        </span>
+      </Info>
+    </div>
+  </div>
+  <styles__Button
+    disabled={true}
+    fullWidth={true}
+    primary={true}
+    type="submit"
+  >
+    <button
+      className="Button-sc-1hbypwi-0 styles__Button-pihe1-4 bHNFfx"
+      disabled={true}
+      type="submit"
+    >
+      Sign
+       Up
+    </button>
+  </styles__Button>
+  <styles__Text>
+    <p
+      className="Text-sc-1mkzdb2-0 styles__Text-pihe1-2 fhTDbb"
+    >
+      Already have an account?
+      <Link
+        href="/signin"
+      >
+        <a
+          href="/signin"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+           Sign in
+        </a>
+      </Link>
+    </p>
+  </styles__Text>
+</form>
+`;

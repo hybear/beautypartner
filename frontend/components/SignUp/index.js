@@ -157,13 +157,15 @@ const SignUp = () => {
                     type={showPassword ? 'text' : 'password'}
                     onChange={e => setNewUser({ ...newUser, password: e.target.value })}
                   />
-                  <Info>
+                  <Info
+                    hidden={/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(newUser.password)}
+                  >
                     <ul>
-                      <li className={/(?=.*[A-Z])/.test(newUser.password) && `set-success`}>Uppercase</li>
-                      <li className={/(?=.*[a-z])/.test(newUser.password) && `set-success`}>Lowercase</li>
-                      <li className={/(?=.*[0-9])/.test(newUser.password) && `set-success`}>Number</li>
-                      <li className={/(?=.*[!@#\$%\^&\*])/.test(newUser.password) && `set-success`}>Special Char</li>
-                      <li className={/(?=.{8,})/.test(newUser.password) && `set-success`}>Min 8 characters</li>
+                      {/(?=.*[A-Z])/.test(newUser.password) ? '' : <li>Uppercase</li>}
+                      {/(?=.*[a-z])/.test(newUser.password) ? '' : <li>Lowercase</li>}
+                      {/(?=.*[0-9])/.test(newUser.password) ? '' : <li>Number</li>}
+                      {/(?=.*[!@#\$%\^&\*])/.test(newUser.password) ? '' : <li>Special Char</li>}
+                      {/(?=.{8,})/.test(newUser.password) ? '' : <li>Min 8 characters</li>}
                     </ul>
                   </Info>
                   {/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(newUser.password) && (

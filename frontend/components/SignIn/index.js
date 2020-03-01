@@ -77,11 +77,11 @@ const SignIn = () => {
                   {/^(?!$)+(?!\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$)/.test(User.email) && (
                     <Info>Check if your e-mail is valid</Info>
                   )}
-                  {/* {/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(User.email) && (
+                  {/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(User.email) && (
                     <span className="set--ok">
                       <Checked isStoped={false} />
                     </span>
-                  )} */}
+                  )}
                 </div>
 
                 <div className="form__grid">
@@ -99,20 +99,20 @@ const SignIn = () => {
                     type={showPassword ? 'text' : 'password'}
                     onChange={e => setUser({ ...User, password: e.target.value })}
                   />
-                  <Info>
+                  <Info hidden={/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(User.password)}>
                     <ul>
-                      <li className={/(?=.*[A-Z])/.test(User.password) && `set-success`}>Uppercase</li>
-                      <li className={/(?=.*[a-z])/.test(User.password) && `set-success`}>Lowercase</li>
-                      <li className={/(?=.*[0-9])/.test(User.password) && `set-success`}>Number</li>
-                      <li className={/(?=.*[!@#\$%\^&\*])/.test(User.password) && `set-success`}>Special Char</li>
-                      <li className={/(?=.{8,})/.test(User.password) && `set-success`}>Min 8 characters</li>
+                      {/(?=.*[A-Z])/.test(User.password) ? '' : <li>Uppercase</li>}
+                      {/(?=.*[a-z])/.test(User.password) ? '' : <li>Lowercase</li>}
+                      {/(?=.*[0-9])/.test(User.password) ? '' : <li>Number</li>}
+                      {/(?=.*[!@#\$%\^&\*])/.test(User.password) ? '' : <li>Special Char</li>}
+                      {/(?=.{8,})/.test(User.password) ? '' : <li>Min 8 characters</li>}
                     </ul>
                   </Info>
-                  {/* {/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(User.password) && (
+                  {/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(User.password) && (
                     <span className="set--ok">
                       <Checked isStoped={false} />
                     </span>
-                  )} */}
+                  )}
                 </div>
 
                 <div className="form__grid">

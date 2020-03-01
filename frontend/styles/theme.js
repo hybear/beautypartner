@@ -1,4 +1,4 @@
-import baseStyled, { css, ThemedStyledInterface } from 'styled-components';
+import baseStyled, { css, ThemedStyledInterface, ThemeProvider } from 'styled-components';
 
 const sizes = {
   desktop: 1140,
@@ -46,5 +46,6 @@ export const theme = {
   misc,
 };
 
+export const ThemeProviderWrapper = ({ children }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 export const styled = baseStyled;
 export default theme;
