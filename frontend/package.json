@@ -2,7 +2,13 @@
   "name": "beauty-partner",
   "version": "1.0.0",
   "description": "Small test to work in Boticario Group",
-  "main": "index.js",
+  "contributors": [
+    {
+      "name": "Patrick Gomes",
+      "email": "castro.patrick@outlook.com",
+      "homepage": "https://hybear.com"
+    }
+  ],
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
@@ -162,9 +168,11 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [{
-                  "cleanupIDs": false
-                }]
+                "plugins": [
+                  {
+                    "cleanupIDs": false
+                  }
+                ]
               }
             }
           ]
@@ -198,9 +206,11 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [{
-                  "cleanupIDs": false
-                }]
+                "plugins": [
+                  {
+                    "cleanupIDs": false
+                  }
+                ]
               }
             }
           ]
@@ -241,9 +251,11 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [{
-                  "cleanupIDs": false
-                }]
+                "plugins": [
+                  {
+                    "cleanupIDs": false
+                  }
+                ]
               }
             }
           ]
@@ -263,9 +275,11 @@
         "inline-react-svg",
         {
           "svgo": {
-            "plugins": [{
-              "cleanupIDs": false
-            }]
+            "plugins": [
+              {
+                "cleanupIDs": false
+              }
+            ]
           }
         }
       ]
