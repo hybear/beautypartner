@@ -156,9 +156,11 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [{
-                  "cleanupIDs": false
-                }]
+                "plugins": [
+                  {
+                    "cleanupIDs": false
+                  }
+                ]
               }
             }
           ]
@@ -192,9 +194,11 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [{
-                  "cleanupIDs": false
-                }]
+                "plugins": [
+                  {
+                    "cleanupIDs": false
+                  }
+                ]
               }
             }
           ]
@@ -235,9 +239,11 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [{
-                  "cleanupIDs": false
-                }]
+                "plugins": [
+                  {
+                    "cleanupIDs": false
+                  }
+                ]
               }
             }
           ]
@@ -257,9 +263,11 @@
         "inline-react-svg",
         {
           "svgo": {
-            "plugins": [{
-              "cleanupIDs": false
-            }]
+            "plugins": [
+              {
+                "cleanupIDs": false
+              }
+            ]
           }
         }
       ]

@@ -2,9 +2,9 @@ version: 2.1
 orbs:
   snyk: snyk/snyk@0.0.8
 jobs:
-  build:
+  build-and-test:
     docker:
       - image: "circleci/node:latest"
     steps:
       - checkout
-      - run: cd frontend && npm install -q && snyk/scan
+      - run: cd frontend && npm install -q && npm run test
