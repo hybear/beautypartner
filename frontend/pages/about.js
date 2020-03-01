@@ -1,3 +1,4 @@
+import React from 'react';
 import About from '@components/About';
 import Meta from '@components/Meta';
 

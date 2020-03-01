@@ -1,9 +1,8 @@
 import App from 'next/app';
-import React, { Component } from 'react';
+import React from 'react';
 import GlobalStyles from '../styles/global-styles';
 import { ThemeProvider } from '../styles/themed-components';
 import theme from '../styles/theme';
-import Meta from './Meta';
 
 class Page extends App {
   render() {

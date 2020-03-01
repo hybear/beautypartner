@@ -1,6 +1,6 @@
+import React from 'react';
 import styled from 'styled-components';
 import { Mutation } from 'react-apollo';
-import User from '../User';
 import { TOGGLE_CART_MUTATION } from '../General/Cart';
 
 const Cart = styled.span`

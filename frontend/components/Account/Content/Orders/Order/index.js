@@ -1,12 +1,12 @@
+import React from 'react';
 import propTypes from 'prop-types';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import formatMoney from '../../../../../lib/formatMoney';
-import { format, formatDistance, parseISO } from 'date-fns';
-import Link from 'next/link';
+import { formatDistance, parseISO } from 'date-fns';
 
 // UI
-import { OrderStylesContainer, OrderTitle, OrderStyles, OrderInfo, OrderItems, OrderButton } from './styles';
+import { OrderStylesContainer, OrderTitle, OrderStyles, OrderInfo, OrderItems } from './styles';
 
 // ANIMATIONS
 import Loading from '../../../../General/Animations/ContentLoading';

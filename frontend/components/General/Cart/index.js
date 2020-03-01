@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Query, Mutation } from 'react-apollo';
 import { adopt } from 'react-adopt';
 import gql from 'graphql-tag';
@@ -6,11 +6,10 @@ import User from '../../User';
 import formatMoney from '../../../lib/formatMoney';
 import calcTotalPrice from '../../../lib/calcTotalPrice';
 import RemoveFromCart from '../CartRemoveItem';
-import Link from 'next/link';
 import Stripe from '../../Checkout/Integrations/Stripe';
 
 // UI
-import { Button, CartStyles, CartItemList, CartItemStyles, CloseButton, Total } from './styles';
+import { CartStyles, CartItemList, CartItemStyles, CloseButton, Total } from './styles';
 import { Title } from '../';
 
 const LOCAL_STATE_QUERY = gql`

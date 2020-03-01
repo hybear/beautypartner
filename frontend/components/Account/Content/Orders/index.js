@@ -1,20 +1,13 @@
+import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import formatMoney from '../../../../lib/formatMoney';
-import { format, formatDistance, parseISO } from 'date-fns';
+import { formatDistance, parseISO } from 'date-fns';
 import Link from 'next/link';
 
 // UI
 import { Title } from '../styles'; // Content
-import {
-  OrderStylesContainer,
-  OrderListTitle,
-  OrderList,
-  OrderStyles,
-  OrderTitle,
-  OrderTotal,
-  OrderButton,
-} from './styles';
+import { OrderStylesContainer, OrderListTitle, OrderList, OrderStyles, OrderTotal, OrderButton } from './styles';
 
 // ANIMATIONS
 import Loading from '../../../General/Animations/ContentLoading';
@@ -77,7 +70,7 @@ const Orders = () => {
     <Query query={ALL_ORDERS_QUERY}>
       {({ data, error, loading }) => {
         if (loading) return <Loading isStoped={false} />;
-        if (error) return <Error error={error} />;
+        // if (error) return <Error error={error} />;
 
         const orders = data.orders;
         return (

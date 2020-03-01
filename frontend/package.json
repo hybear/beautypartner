@@ -61,6 +61,9 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-react": "^7.18.3",
     "husky": "^4.2.1",
     "jest": "^25.1.0",
     "jest-canvas-mock": "^2.2.0",
@@ -77,7 +80,9 @@
     "typescript": "^3.7.5"
   },
   "husky": {
-    "hooks": {}
+    "hooks": {
+      "eslint": "eslint --ignore-path .gitignore ."
+    }
   },
   "prettier": {
     "singleQuote": true,
@@ -157,11 +162,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -195,11 +198,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -240,11 +241,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -264,11 +263,9 @@
         "inline-react-svg",
         {
           "svgo": {
-            "plugins": [
-              {
-                "cleanupIDs": false
-              }
-            ]
+            "plugins": [{
+              "cleanupIDs": false
+            }]
           }
         }
       ]

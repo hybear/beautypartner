@@ -41,7 +41,7 @@ import { EditButton } from '../../../General'; // General
 // ANIMATIONS
 import Checked from '../../../General/Animations/Checked';
 
-const ProfileContent = props => {
+const ProfileContent = () => {
   const Badges = {
     BeautyPartner: {
       El: <BadgeBeautyPartner />,
@@ -151,7 +151,7 @@ const ProfileContent = props => {
 
   const handleChange = e => {
     try {
-      const { name, type, value } = e.target;
+      const { name, value } = e.target;
       // const val = type === 'number' ? parseFloat(value) : value;
       setProfile({ ...profile, [name]: value });
     } catch (err) {
@@ -187,6 +187,7 @@ const ProfileContent = props => {
     });
     console.log(profile);
     console.log('UPDATED');
+    return res;
   };
 
   return (
@@ -226,7 +227,7 @@ const ProfileContent = props => {
             <Mutation
               mutation={UPDATE_USER}
               refetchQueries={[{ query: CURRENT_USER_QUERY }]}
-              onCompleted={data => handleInput(handleProfile, setHandleProfile)}
+              onCompleted={() => handleInput(handleProfile, setHandleProfile)}
             >
               {(updateProfileMutation, { loading, error }) => (
                 <Form

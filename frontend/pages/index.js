@@ -1,3 +1,4 @@
+import React from 'react';
 import Account from '@components/Account';
 import Middleware from '@components/Middleware';
 import Profile from '@components/Account/Content/Profile';

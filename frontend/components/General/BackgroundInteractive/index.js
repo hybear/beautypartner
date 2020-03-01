@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 // import { Canvas, useFrame } from 'react-three-fiber'
 import * as THREE from 'three';
 
@@ -261,7 +261,6 @@ const Background = () => {
       renderer.setSize(w, h);
       renderer.setClearColor(new THREE.Color('rgb(255,255,255)'));
 
-      console.log(HeroInteractive);
       $container.current.appendChild(renderer.domElement);
 
       window.addEventListener('resize', handleResize);

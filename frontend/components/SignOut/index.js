@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Mutation } from 'react-apollo';
 import Router from 'next/router';
 import gql from 'graphql-tag';

@@ -1,6 +1,6 @@
-import React from 'react';
+// import React from 'react';
 import * as styledComponents from 'styled-components';
-import { Theme } from './theme';
+// import { Theme } from './theme';
 import withSizes from '../lib/withSizes';
 
 const {

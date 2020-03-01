@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import Link from 'next/link';
 import { CardStyles, Title, Image, PriceTag, Description, AddToCart } from './styles';
 import AddBtn from '../CartAddItem';
-import DeleteItem from '../../CRUD_DeleteItem';
 import formatMoney from '../../../lib/formatMoney';
 
 const CardProduct = props => {
   const [Hover, setHover] = useState(false);
 
-  const { item, user } = props;
+  const { item } = props;
 
   return (
     <CardStyles onMouseEnter={() => setHover(!Hover)} onMouseLeave={() => setHover(!Hover)}>

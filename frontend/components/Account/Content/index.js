@@ -1,7 +1,8 @@
+import React from 'react';
 import { Content } from './styles';
 
-const AccountContent = props => {
-  return <Content>{props.children}</Content>;
+const AccountContent = ({ children }) => {
+  return <Content>{children}</Content>;
 };
 
 export default AccountContent;

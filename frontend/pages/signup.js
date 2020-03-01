@@ -1,3 +1,4 @@
+import React from 'react';
 import SignUp from '@components/SignUp';
 import Meta from '@components/Meta';
 import PopUp from '@components/General/PopUp';

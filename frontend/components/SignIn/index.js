@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Mutation, Query } from 'react-apollo';
+import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
-import User, { CURRENT_USER_QUERY } from '../User';
+import { CURRENT_USER_QUERY } from '../User';
 import Link from 'next/link';
 import Router from 'next/router';
-import InputMask from 'react-input-mask';
 
 // UI
 import { Input, Label, Info, Checkbox } from '../General/Form';

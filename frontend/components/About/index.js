@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import Link from 'next/link';
 // import { Canvas, useFrame } from 'react-three-fiber'
@@ -115,22 +115,22 @@ const About = () => {
           </p>
           <ul className="content__social">
             <li>
-              <a href="https://medium.com/@hybear" target="_blank">
+              <a href="https://medium.com/@hybear" target="_blank" rel="noopener noreferrer">
                 <Medium />
               </a>
             </li>
             <li>
-              <a href="https://github.com/hybear" target="_blank">
+              <a href="https://github.com/hybear" target="_blank" rel="noopener noreferrer">
                 <GitHub />
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/thehybear" target="_blank">
+              <a href="https://www.instagram.com/thehybear" target="_blank" rel="noopener noreferrer">
                 <Instagram />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/hybear/" target="_blank">
+              <a href="https://www.linkedin.com/in/hybear/" target="_blank" rel="noopener noreferrer">
                 <LinkedIn />
               </a>
             </li>
@@ -144,7 +144,7 @@ const About = () => {
         </BG>
         <NatureGroup>
           <SingleTree />
-          <a href="http://hybear.com" target="_blank">
+          <a href="http://hybear.com" target="_blank" rel="noopener noreferrer">
             <Logo />
           </a>
           <TreesL />
@@ -175,6 +175,7 @@ const About = () => {
           className="screensContainer__link"
           href="https://www.figma.com/file/4OvON0hLKU1Rp2oPBnt3zE/Beauty-Partner?node-id=0%3A1"
           target="_blank"
+          rel="noopener noreferrer"
         >
           see all screens
         </a>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { ProductList, Search } from '../../../General';
 import { Title } from '../styles'; // Content
 

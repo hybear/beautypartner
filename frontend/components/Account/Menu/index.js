@@ -1,9 +1,8 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Me } from '../../Middleware';
 import Link from 'next/link';
 import { useMutation } from 'react-apollo';
 import gql from 'graphql-tag';
-import formatMoney from '../../../lib/formatMoney';
 import { CURRENT_USER_QUERY } from '../../User';
 
 const UPDATE_AVATAR = gql`
@@ -65,7 +64,6 @@ const Menu = props => {
     '6': <Avatar6 />,
     '7': <Avatar7 />,
     '8': <Avatar8 />,
-    '8': <Avatar8 />,
     '9': <Avatar9 />,
     '10': <Avatar10 />,
     '11': <Avatar11 />,
@@ -78,7 +76,7 @@ const Menu = props => {
     return Avatars[Av] || Avatars['1'];
   };
 
-  const [updateProfile, { data, loading, error }] = useMutation(UPDATE_AVATAR, {
+  const [updateProfile, { loading }] = useMutation(UPDATE_AVATAR, {
     refetchQueries: [
       {
         query: CURRENT_USER_QUERY,

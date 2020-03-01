@@ -12,8 +12,8 @@ const REQUEST_RESET_MUTATION = gql`
 `;
 
 // UI
-import { Input, Label, Info, Checkbox } from '../../General/Form';
-import { RequestResetContainer, BGImage, FormContainer, Form, Text, Logo, Error, Button } from './styles';
+import { Input, Label, Info } from '../../General/Form';
+import { RequestResetContainer, BGImage, FormContainer, Form, Text, Logo, Button } from './styles';
 
 // ANIMATIONS
 import Checked from '../../General/Animations/Checked';

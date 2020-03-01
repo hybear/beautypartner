@@ -1,4 +1,5 @@
-import baseStyled, { css, ThemedStyledInterface, ThemeProvider } from 'styled-components';
+import React from 'react';
+import baseStyled, { css, ThemeProvider } from 'styled-components';
 
 const sizes = {
   desktop: 1140,

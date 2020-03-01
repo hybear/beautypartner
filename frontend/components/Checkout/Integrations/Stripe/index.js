@@ -3,7 +3,6 @@ import StripeCheckout from 'react-stripe-checkout';
 import { Mutation } from 'react-apollo';
 import Router from 'next/router';
 import NProgress from 'nprogress';
-import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import calcTotalPrice from '../../../../lib/calcTotalPrice';
 // import Error from '../../../General/'
@@ -25,7 +24,7 @@ const CREATE_ORDER_MUTATION = gql`
   }
 `;
 
-const StripeButton = props => {
+const StripeButton = () => {
   const totalItems = cart => {
     return cart.reduce((tally, cartItem) => tally + cartItem.quantity, 0);
   };
