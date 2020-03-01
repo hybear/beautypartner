@@ -9,4 +9,4 @@ jobs:
       - checkout
       - run: ls -al
       # - run: npm install -q
-      # - snyk/scan
+      - snyk/scan
