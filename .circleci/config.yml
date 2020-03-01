@@ -7,6 +7,6 @@ jobs:
       - image: "circleci/node:latest"
     steps:
       - checkout
-      - run: cd ../frontend
+      - run: cd frontend
       - run: npm install -q
       - snyk/scan
