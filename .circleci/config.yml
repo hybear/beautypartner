@@ -1,0 +1,17 @@
+version: 2.1
+orbs:
+  node: circleci/node@latest
+  snyk: snyk/snyk@x.y.z
+jobs:
+  build-and-test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run: ls -al
+      # - run: npm install -q
+      # - snyk/scan
+workflows:
+  build-and-test:
+    jobs:
+      - build-and-test
