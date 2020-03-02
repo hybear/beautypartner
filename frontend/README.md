@@ -17,3 +17,6 @@
 #### Unit Test
 
 - in your terminal: npm run test
+
+#### Orders
+- to test orders you can use the Stripe API that have cards for this https://stripe.com/docs/testing#cards
