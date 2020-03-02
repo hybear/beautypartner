@@ -8,7 +8,7 @@
 #### Initialize Next
 
 - in your terminal: npm run dev
-- server will starts [http://localhost:3000](http://localhost:3000) and [http://localhost:3001](http://localhost:3001)
+- server will starts [http://localhost:3000](http://localhost:3000) and [https://localhost:3001](https://localhost:3001)
 
 #### Have Fun
 
