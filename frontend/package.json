@@ -2,18 +2,16 @@
   "name": "beauty-partner",
   "version": "1.0.0",
   "description": "Small test to work in Boticario Group",
-  "contributors": [
-    {
-      "name": "Patrick Gomes",
-      "email": "castro.patrick@outlook.com",
-      "homepage": "https://hybear.com"
-    }
-  ],
+  "contributors": [{
+    "name": "Patrick Gomes",
+    "email": "castro.patrick@outlook.com",
+    "homepage": "https://hybear.com"
+  }],
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
     "start": "next start",
-    "test": "SET NODE_ENV=test && jest --watch",
+    "test": "SET NODE_ENV=test&& jest --watch",
     "citest": "jest",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
@@ -168,11 +166,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -206,11 +202,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -251,11 +245,9 @@
             "inline-react-svg",
             {
               "svgo": {
-                "plugins": [
-                  {
-                    "cleanupIDs": false
-                  }
-                ]
+                "plugins": [{
+                  "cleanupIDs": false
+                }]
               }
             }
           ]
@@ -275,11 +267,9 @@
         "inline-react-svg",
         {
           "svgo": {
-            "plugins": [
-              {
-                "cleanupIDs": false
-              }
-            ]
+            "plugins": [{
+              "cleanupIDs": false
+            }]
           }
         }
       ]
