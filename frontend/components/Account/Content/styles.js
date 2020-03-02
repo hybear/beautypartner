@@ -3,7 +3,7 @@ import { Title as GTitle } from '../../General';
 
 export const Content = styled.div`
   grid-area: cont;
-  margin: 20px 0 0 40px;
+  margin: 20px 0;
   padding: 0 20px 0;
   overflow: auto;
   &::-webkit-scrollbar-track {
