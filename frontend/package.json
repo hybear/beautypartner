@@ -47,7 +47,7 @@
     "react-stripe-checkout": "^2.6.3",
     "react-three-fiber": "^4.0.14",
     "snyk": "^1.296.1",
-    "three": "^0.113.2",
+    "three": "^0.125.0",
     "waait": "^1.0.5"
   },
   "devDependencies": {
